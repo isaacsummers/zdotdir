@@ -24,10 +24,10 @@ alias grep="command grep --exclude-dir={.git,.vscode}"
 alias secrets="cd ${XDG_DATA_HOME:=~/.local/share}/secrets"
 
 # more ways to ls
-alias ll='ls -lh'
-alias la='ls -lAh'
-alias lsa="ls -aG"
-alias ldot='ls -ld .*'
+# alias ll='ls -lh'
+# alias la='ls -lAh'
+# alias lsa="ls -aG"
+# alias ldot='ls -ld .*'
 
 # fix typos
 alias get=git

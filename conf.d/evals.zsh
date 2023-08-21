@@ -1,0 +1,5 @@
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+eval "$(thefuck --alias)"
+eval "$(bw completion --shell zsh)"
+# eval "$(register-python-argcomplete pipx)"

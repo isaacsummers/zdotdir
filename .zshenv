@@ -18,18 +18,32 @@ export GNUPGHOME=$XDG_DATA_HOME/gnupg
 export REPO_HOME=$XDG_CACHE_HOME/repos
 export ANTIDOTE_HOME=$REPO_HOME
 
+# Pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+
+# Graphviz pkgconfigpath
+export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
+export C_INCLUDE_PATH="/opt/homebrew/opt/graphviz/include"
+
 # Ensure path arrays do not contain duplicates.
 typeset -gU fpath path cdpath
 
 # Set the list of directories that cd searches.
 cdpath=(
   $XDG_PROJECTS_DIR(N/)
-  $XDG_PROJECTS_DIR/mattmc3(N/)
+  # $XDG_PROJECTS_DIR/mattmc3(N/)
   $cdpath
 )
 
 # Set the list of directories that Zsh searches for programs.
 path=(
+  # pyenv
+  $PYENV_ROOT/bin(N)
+
+  # conda
+  $HOME/miniconda3/bin(N)
+
   # core
   $HOME/{,s}bin(N)
   /opt/{homebrew,local}/{,s}bin(N)
@@ -46,6 +60,9 @@ path=(
   /{usr/local,opt/homebrew}/opt/ruby/bin(N)
   /{usr/local,opt/homebrew}/lib/ruby/gems/*/bin(N)
   $HOME/.gem/ruby/*/bin(N)
+
+  # pipx
+  $HOME/.local/bin(N)
 
   # path
   $path

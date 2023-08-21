@@ -44,3 +44,13 @@ if [[ -r $DOTFILES/local/zsh/zstyles.local.zsh ]]; then
 fi
 
 # vim: ft=zsh sw=2 ts=2 et
+
+#
+# fzf-tab
+#
+zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+zstyle ':completion:*:git-checkout:*' sort false
+zstyle ':fzf-tab:*' prefix '♦ '
+
+zstyle ':fzf-tab:complete:*:*' fzf-preview 'less ${(Q)realpath}'
+export LESSOPEN='|~/.lessfilter %s'

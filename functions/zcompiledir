@@ -5,8 +5,10 @@ autoload -U zrecompile
 local f
 local flag_clean=false
 [[ "$1" == "-c" ]] && flag_clean=true && shift
-if [[ -z "$1" ]] || [[ ! -d "$1" ]]; then
-  echo "Bad or missing directory $1" && return 1
+if [[ -z "$1" ]]; then
+  set -- "$ZDOTDIR"
+elif [[ ! -d "$1" ]]; then
+  echo "Bad directory $1" && return 1
 fi
 
 if [[ $flag_clean == true ]]; then

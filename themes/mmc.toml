@@ -17,7 +17,7 @@ vicmd_symbol = "[❮](purple)[❮](cyan)"
 # vicmd_symbol = "[⪻](yellow)"
 
 [python]
-format = '\($virtualenv\) '
+format = '\(($virtualenv|)${version}\) '
 
 [directory]
 style = "blue"
