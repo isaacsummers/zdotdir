@@ -6,12 +6,12 @@ alias ssenv='ssource .env'
 alias slenv='lsource .env'
 
 # ssh
-alias sshrem="ssh-add -D"
-alias sshall="find $HOME/.ssh -type f -regex '.*/id_[^.]*$' | xargs ssh-add"
-alias sshdir="cd $HOME/.ssh"
-alias sshconfig="code $HOME/.ssh/config"
-alias sshcreate="cd $HOME/.ssh && ssh-keygen -t ed25519 -C ${HOST%%.local}"
-alias sshlist="ssh-add -l"
+alias sshrem='ssh-add -D'
+alias sshall='find $HOME/.ssh -type f -regex ".*/id_[^.]*$" | xargs ssh-add'
+alias sshdir='cd $HOME/.ssh'
+alias sshconfig='code $HOME/.ssh/config'
+alias sshcreate='cd $HOME/.ssh && ssh-keygen -t ed25519 -C ${HOST%%.local}'
+alias sshlist='ssh-add -l'
 
 # ls
 alias l='exa -la1 --icons' #
@@ -20,10 +20,8 @@ alias ll='exa -lh --icons --group-directories-first --octal-permissions'
 alias la='exa -lah --icons --group-directories-first --octal-permissions -d .*'
 alias lsa='exa -lah --icons --group-directories-first --octal-permissions'
 alias ldot='ls -ld .*'
-alias ppath='print-path'
-alias ppath-simple='echo $PATH | tr ":" "\n"'
-alias pathprint='echo ${PATH//:/\\n}'
-alias fpathprint='echo ${FPATH//:/\\n}'
+alias ppath='echo ${PATH//:/\\n}'
+alias fppath='echo ${FPATH//:/\\n}'
 alias ag='alias | grep'
 
 # dir
@@ -31,27 +29,30 @@ alias take='function _take(){ mkdir -p "$@" && cd "$_"; }; _take'
 
 # pyenv
 alias pye='pyenv'
-alias pyl="pyenv local"
+alias pyl='pyenv local'
 alias pylu='pyenv local --unset'
-alias pyg="pyenv global"
+alias pyg='pyenv global'
 alias pygu='pyenv global --unset'
-alias pys="pyenv shell"
+alias pys='pyenv shell'
 alias pysu='pyenv shell --unset'
 alias pyv='pyenv virtualenv'
 alias pyvs='pyenv virtualenvs'
 alias pyvd='pyenv virtualenv-delete'
 alias pyvi='pyenv virtualenv-init'
 alias pyvp='pyenv virtualenv-prefix'
-alias wpyy="pyenv which python3"
+alias wpyy='pyenv which python3'
+
+# pip
+alias pipunall='pip uninstall -yr <(pip freeze)'
 
 # git
 alias gmv='git mv'
 alias gbnma='git branch --all --no-merged'
 alias gbmm='git branch --merged main'
 alias gbmd='git branch --merged develop'
-alias cgig="cat .gitignore"
+alias cgig='cat .gitignore'
 alias gba='git branch -a'
-alias gbav="git branch --all -vv"
+alias gbav='git branch --all -vv'
 alias gsta='git stash'
 alias gstp='git stash pop'
 alias gpll='git pull'
@@ -75,6 +76,12 @@ alias gfh='git-flow hotfix'
 alias gfs='git-flow support'
 alias gfv='git-flow version'
 
+# git crypt
+alias gcr='git-crypt'
+alias gcrl='git-crypt lock'
+alias gcrul='git-crypt unlock'
+alias gcrs='git-crypt status'
+
 # poetry
 alias ptr='poetry'
 alias ptri='poetry install'
@@ -93,8 +100,8 @@ alias ptrst='poetry show --tree'
 alias ptrso='poetry show --outdated'
 alias ptrsot='poetry show -T --outdated'
 alias ptru='poetry update'
-alias ptruaa="poetry show -T -o | awk '{print \$1}' | xargs -tI {} poetry add {}@latest || true"
-alias ptrua="poetry show -T -o | awk '{print \$1}' | xargs -tI {} poetry update {} || true"
+alias ptruaa='poetry show -T -o | awk "{print \$1}" | xargs -tI {} poetry add {}@latest || true'
+alias ptrua='poetry show -T -o | awk "{print \$1}" | xargs -tI {} poetry update {} || true'
 alias ptrlf='ptrl && ptrf'
 alias ptrisl='ptrln && ptris'
 alias ptrislf='ptrisl && ptrf'

@@ -48,14 +48,15 @@ mattmc3/zman
 ohmyzsh/ohmyzsh kind:fpath path:plugins/git
 docker/cli kind:fpath path:contrib/completion/zsh
 esc/conda-zsh-completion kind:fpath
-ohmyzsh/ohmyzsh path:plugins/git kind:defer
-ohmyzsh/ohmyzsh path:plugins/gitfast kind:defer
-bobthecow/git-flow-completion kind:defer
+ohmyzsh/ohmyzsh path:plugins/git
+ohmyzsh/ohmyzsh path:plugins/gitfast
+bobthecow/git-flow-completion
 
 # final
+clarketm/zsh-completions kind:fpath
 zsh-users/zsh-completions kind:fpath path:src
 mattmc3/zephyr path:plugins/completion
-# belak/zsh-utils path:completion
+belak/zsh-utils path:completion
 mattmc3/zephyr path:plugins/confd
 
 # custom

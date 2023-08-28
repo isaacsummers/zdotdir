@@ -1,0 +1,20 @@
+# If ZSH_PROFILE isn't already set, default it to 'zsh'
+[[ -z $ZSH_PROFILE ]] && export ZSH_PROFILE="zsh"
+
+ppath() {
+    echo ${PATH//:/\\n}
+}
+
+za() {
+    local profile="$1"
+    # If no profile is provided, default to 'zsh'
+    [[ -z $profile ]] && profile="zsh"
+    export ZSH_PROFILE=$profile  # Export the variable
+
+    export ZDOTDIR=${ZDOTDIR:-$HOME}
+    # Start a new clean shell with only HOME and ZSH_PROFILE variables
+    exec env -i HOME=$HOME TERM=$TERM ZSH_PROFILE=$profile zsh -lia
+}
+
+ZDOTDIR="$HOME/.config/${ZSH_PROFILE:-zsh}"
+[[ -f $ZDOTDIR/.zshenv ]] && . $ZDOTDIR/.zshenv

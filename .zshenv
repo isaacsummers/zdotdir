@@ -60,6 +60,9 @@ path=(
   /{usr/local,opt/homebrew}/opt/ruby/bin(N)
   /{usr/local,opt/homebrew}/lib/ruby/gems/*/bin(N)
   $HOME/.gem/ruby/*/bin(N)
+  
+  # snowsql
+  /Applications/SnowSQL.app/Contents/MacOS(N)
 
   # pipx
   $HOME/.local/bin(N)
@@ -69,8 +72,8 @@ path=(
 )
 
 # Apps
-export EDITOR=hx
-export VISUAL=code
+export EDITOR=vim
+export VISUAL=code-insiders
 export PAGER=less
 if [[ "$OSTYPE" == darwin* ]]; then
   export BROWSER='open'
@@ -82,6 +85,7 @@ export LANG='en_US.UTF-8'
 # Misc
 export KEYTIMEOUT=1
 export SHELL_SESSIONS_DISABLE=1 # Make Apple Terminal behave.
+export GPG_TTY=$(tty) # Make GPG work in TTY.
 
 # Use `< file` to quickly view the contents of any file.
 [[ -z "$READNULLCMD" ]] || READNULLCMD=$PAGER
