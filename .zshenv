@@ -86,6 +86,7 @@ export LANG='en_US.UTF-8'
 export KEYTIMEOUT=1
 export SHELL_SESSIONS_DISABLE=1 # Make Apple Terminal behave.
 export GPG_TTY=$(tty) # Make GPG work in TTY.
+export LESSOPEN='|$ZDOTDIR/conf.d/.lessfilter %s'
 
 # Use `< file` to quickly view the contents of any file.
 [[ -z "$READNULLCMD" ]] || READNULLCMD=$PAGER

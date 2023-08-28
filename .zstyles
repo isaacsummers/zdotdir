@@ -53,4 +53,3 @@ zstyle ':completion:*:git-checkout:*' sort false
 zstyle ':fzf-tab:*' prefix '♦ '
 
 zstyle ':fzf-tab:complete:*:*' fzf-preview 'less ${(Q)realpath}'
-export LESSOPEN='|~/.lessfilter %s'

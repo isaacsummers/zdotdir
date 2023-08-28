@@ -19,7 +19,7 @@ alias ls="exa -lh --icons --no-permissions --no-user --group-directories-first"
 alias ll='exa -lh --icons --group-directories-first --octal-permissions'
 alias la='exa -lah --icons --group-directories-first --octal-permissions -d .*'
 alias lsa='exa -lah --icons --group-directories-first --octal-permissions'
-alias ldot='ls -ld .*'
+alias ldot='exa -ld --icons --group-directories-first --octal-permissions .*'
 alias ppath='echo ${PATH//:/\\n}'
 alias fppath='echo ${FPATH//:/\\n}'
 alias ag='alias | grep'
@@ -82,6 +82,9 @@ alias gcrl='git-crypt lock'
 alias gcrul='git-crypt unlock'
 alias gcrs='git-crypt status'
 
+# github cli
+alias ghrsd='gh repo set-default'
+
 # poetry
 alias ptr='poetry'
 alias ptri='poetry install'
@@ -106,6 +109,12 @@ alias ptrlf='ptrl && ptrf'
 alias ptrisl='ptrln && ptris'
 alias ptrislf='ptrisl && ptrf'
 
+# zsh
+alias zreload='exec zsh'
+alias zrr='exec zsh'
+alias arr='. $ZDOTDIR/conf.d/aliases.personal.zsh'
+alias zcompdir='zcompiledir'
+
 # misc
 alias code='code-insiders'
 alias code.='code -n .'
@@ -119,8 +128,13 @@ alias aliasedit='code $ZDOTDIR/conf.d/aliases.personal.zsh'
 alias shlev='echo $SHLVL'
 # alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 
-# zsh
-alias zreload='exec zsh'
-alias zrr='exec zsh'
-alias arr='. $ZDOTDIR/conf.d/aliases.personal.zsh'
-alias zcompdir='zcompiledir'
+noexpand_aliases+=(
+    rm
+    del
+    safe-rm
+    l
+    ls
+    ll
+    lsa
+    ldot
+)

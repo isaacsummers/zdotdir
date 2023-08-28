@@ -95,7 +95,7 @@ alias todos="$VISUAL $HOME/Desktop/todo.txt"
 # noexpand
 #
 
-noexpand_aliases=(
+noexpand_aliases+=(
   gpg
   grep
   ls
