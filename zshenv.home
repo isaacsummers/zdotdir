@@ -5,6 +5,10 @@ ppath() {
     echo ${PATH//:/\\n}
 }
 
+zdot() {
+    cd $ZDOTDIR
+}
+
 za() {
     local profile="$1"
     # If no profile is provided, default to 'zsh'

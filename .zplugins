@@ -26,6 +26,7 @@ ohmyzsh/ohmyzsh path:plugins/fancy-ctrl-z
 
 # custom
 $HOME/miniconda3/etc/profile.d/conda.sh
+mattmc3/zsh-safe-rm kind:defer
 
 # my custom plugins
 $ZDOTDIR/plugins/xdg
