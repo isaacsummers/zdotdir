@@ -69,12 +69,12 @@ alias gunignoredir='git ls-files -z | xargs -0 git update-index --no-assume-unch
 
 # git flow
 alias gfl='git-flow'
-alias gfi='git-flow init'
-alias gff='git-flow feature'
-alias gfr='git-flow release'
-alias gfh='git-flow hotfix'
-alias gfs='git-flow support'
-alias gfv='git-flow version'
+alias gfli='git-flow init'
+alias gflf='git-flow feature'
+alias gflr='git-flow release'
+alias gflh='git-flow hotfix'
+alias gfls='git-flow support'
+alias gflv='git-flow version'
 
 # git crypt
 alias gcr='git-crypt'
