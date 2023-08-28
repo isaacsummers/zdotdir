@@ -1,0 +1,15 @@
+#!/bin/zsh
+##? Delete an alias from aliases.personal.zsh
+
+if [ $# -ne 1 ]; then
+    echo "Usage: adel <alias_name>"
+    return 1
+fi
+
+# Delete the alias from the file
+sed -i '' "/^alias $1=/d" $ZDOTDIR/conf.d/aliases.personal.zsh
+
+# If you want to reflect the changes immediately in your current shell, unalias the alias:
+unalias $1 2> /dev/null || echo "Alias $1 not found"
+
+echo "Alias $1 removed from aliases.personal.zsh"

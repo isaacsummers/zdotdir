@@ -44,6 +44,8 @@ romkatv/zsh-bench kind:path
 ajeetdsouza/zoxide
 # rupa/z
 mattmc3/zman
+fdellwing/zsh-bat
+nekofar/zsh-git-lfs
 
 # completions
 ohmyzsh/ohmyzsh kind:fpath path:plugins/git

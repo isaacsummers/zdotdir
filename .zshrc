@@ -70,3 +70,15 @@ true
 
 zstyle -d ':completion:*' format
 zstyle ':completion:*:descriptions' format '[%d]'
+
+noexpand_aliases+=(
+    rm
+    del
+    safe-rm
+    l
+    ls
+    ll
+    lsa
+    ldot
+    cat
+)

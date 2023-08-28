@@ -127,14 +127,3 @@ alias minin='mkinit --nomods --black'
 alias aliasedit='code $ZDOTDIR/conf.d/aliases.personal.zsh'
 alias shlev='echo $SHLVL'
 # alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
-
-noexpand_aliases+=(
-    rm
-    del
-    safe-rm
-    l
-    ls
-    ll
-    lsa
-    ldot
-)
