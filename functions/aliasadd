@@ -2,7 +2,7 @@
 ##? Add an alias to aliases
 
 if [ $# -lt 2 ]; then
-    echo "Usage: aad <alias_name> <command>"
+    echo "Usage: aliasadd <alias_name> <command>"
     return 1
 fi
 

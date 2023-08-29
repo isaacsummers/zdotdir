@@ -13,6 +13,12 @@ alias sshconfig='code $HOME/.ssh/config'
 alias sshcreate='cd $HOME/.ssh && ssh-keygen -t ed25519 -C ${HOST%%.local}'
 alias sshlist='ssh-add -l'
 
+# gpg
+alias gpg2='gpg'
+alias gpgl='gpg -k --keyid-format SHORT'
+alias gpgls='gpg -K --keyid-format SHORT'
+alias gpge='gpg --edit-key'
+
 # ls
 alias l='exa -la1 --icons' #
 alias ls="exa -lh --icons --no-permissions --no-user --group-directories-first"
@@ -114,15 +120,25 @@ alias zreload='exec zsh'
 alias zrr='exec zsh'
 alias arr='. $ZDOTDIR/conf.d/aliases.personal.zsh'
 alias zcompdir='zcompiledir'
+alias zcheat='code $ZDOTDIR/.docs/zsh-cheatsheet.md'
+alias zstring='code $ZDOTDIR/.docs/zsh-string.md'
+alias shlev='echo $SHLVL'
+alias zdotc='open $HOME/.config/zsh/zsh.code-workspace'
+
+# navi
+alias h='navi'
+alias hq='navi --query'
+alias hc='navi --cheatsh'
+alias ht='navi --tldr'
+alias hh='navi fn welcome'
 
 # misc
 alias code='code-insiders'
+alias coden='code-insiders -n'
 alias code.='code -n .'
-alias zdotc='open $HOME/.config/zsh/zsh.code-workspace'
-alias vimrc='nvim $HOME/.vimrc'
-alias zcheat='code $ZDOTDIR/.docs/zsh-cheatsheet.md'
-alias zstring='code $ZDOTDIR/.docs/zsh-string.md'
 alias aliasedit='code $ZDOTDIR/conf.d/aliases.personal.zsh'
-alias shlev='echo $SHLVL'
-# alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
-alias h='navi'
+alias vimrc='nvim $HOME/.vimrc'
+alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
+alias vi='nvim'
+alias vim='nvim'
+alias git flow='git-flow'

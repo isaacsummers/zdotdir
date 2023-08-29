@@ -2,7 +2,7 @@
 ##? Delete an alias from aliases.personal.zsh
 
 if [ $# -ne 1 ]; then
-    echo "Usage: adel <alias_name>"
+    echo "Usage: aliasdel <alias_name>"
     return 1
 fi
 
