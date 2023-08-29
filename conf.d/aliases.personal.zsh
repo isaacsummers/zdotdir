@@ -72,6 +72,7 @@ alias glsfv='git ls-files -v'
 alias glsfz='git ls-files -z'
 alias gignoredir='git ls-files -z | xargs -0 git update-index --assume-unchanged'
 alias gunignoredir='git ls-files -z | xargs -0 git update-index --no-assume-unchanged'
+alias gt='git tag'
 
 # git flow
 alias gfl='git-flow'
