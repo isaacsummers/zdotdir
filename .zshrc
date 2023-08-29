@@ -70,3 +70,22 @@ true
 
 zstyle -d ':completion:*' format
 zstyle ':completion:*:descriptions' format '[%d]'
+
+noexpand_aliases+=(
+    rm
+    del
+    safe-rm
+    l
+    ls
+    ll
+    lsa
+    ldot
+    cat
+    brew
+)
+
+# add-zsh-hook precmd bind-tab
+# bind-tab() {
+#   bindkey '\t' fzf-tab-complete
+#   # bindkey $terminfo[kcbt] <your preferred shift-tab widget>
+# }

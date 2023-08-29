@@ -53,3 +53,8 @@ zstyle ':completion:*:git-checkout:*' sort false
 zstyle ':fzf-tab:*' prefix '♦ '
 
 zstyle ':fzf-tab:complete:*:*' fzf-preview 'less ${(Q)realpath}'
+
+#
+# Misc
+#
+zstyle -e ':autocomplete:list-choices:*' list-lines 'reply=( $(( LINES / 3 )) )'

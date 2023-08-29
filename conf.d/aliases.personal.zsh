@@ -13,6 +13,12 @@ alias sshconfig='code $HOME/.ssh/config'
 alias sshcreate='cd $HOME/.ssh && ssh-keygen -t ed25519 -C ${HOST%%.local}'
 alias sshlist='ssh-add -l'
 
+# gpg
+alias gpg2='gpg'
+alias gpgl='gpg -k --keyid-format SHORT'
+alias gpgls='gpg -K --keyid-format SHORT'
+alias gpge='gpg --edit-key'
+
 # ls
 alias l='exa -la1 --icons' #
 alias ls="exa -lh --icons --no-permissions --no-user --group-directories-first"
@@ -69,12 +75,20 @@ alias gunignoredir='git ls-files -z | xargs -0 git update-index --no-assume-unch
 
 # git flow
 alias gfl='git-flow'
-alias gfi='git-flow init'
-alias gff='git-flow feature'
-alias gfr='git-flow release'
-alias gfh='git-flow hotfix'
-alias gfs='git-flow support'
-alias gfv='git-flow version'
+alias gfli='git-flow init'
+alias gflf='git-flow feature'
+alias gflfs='git-flow feature start'
+alias gflff='git-flow feature finish'
+alias gflr='git-flow release'
+alias gflrs='git-flow release start'
+alias gflrf='git-flow release finish'
+alias gflh='git-flow hotfix'
+alias gflhs='git-flow hotfix start'
+alias gflhf='git-flow hotfix finish'
+alias gfls='git-flow support'
+alias gflss='git-flow support start'
+alias gflsf='git-flow support finish'
+alias gflv='git-flow version'
 
 # git crypt
 alias gcr='git-crypt'
@@ -114,27 +128,25 @@ alias zreload='exec zsh'
 alias zrr='exec zsh'
 alias arr='. $ZDOTDIR/conf.d/aliases.personal.zsh'
 alias zcompdir='zcompiledir'
+alias zcheat='code $ZDOTDIR/.docs/zsh-cheatsheet.md'
+alias zstring='code $ZDOTDIR/.docs/zsh-string.md'
+alias shlev='echo $SHLVL'
+alias zdotc='open $HOME/.config/zsh/zsh.code-workspace'
+
+# navi
+alias h='navi'
+alias hq='navi --query'
+alias hc='navi --cheatsh'
+alias ht='navi --tldr'
+alias hh='navi fn welcome'
 
 # misc
 alias code='code-insiders'
+alias coden='code-insiders -n'
 alias code.='code -n .'
-alias zdotc='open $HOME/.config/zsh/zsh.code-workspace'
-alias vimrc='nvim $HOME/.vimrc'
-alias zcheat='code $ZDOTDIR/.docs/zsh-cheatsheet.md'
-alias zstring='code $ZDOTDIR/.docs/zsh-string.md'
-alias mini='mkinit'
-alias minin='mkinit --nomods --black'
 alias aliasedit='code $ZDOTDIR/conf.d/aliases.personal.zsh'
-alias shlev='echo $SHLVL'
-# alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
-
-noexpand_aliases+=(
-    rm
-    del
-    safe-rm
-    l
-    ls
-    ll
-    lsa
-    ldot
-)
+alias vimrc='nvim $HOME/.vimrc'
+alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
+alias vi='nvim'
+alias vim='nvim'
+alias git flow='git-flow'

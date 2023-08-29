@@ -72,7 +72,7 @@ path=(
 )
 
 # Apps
-export EDITOR=vim
+export EDITOR=nvim
 export VISUAL=code-insiders
 export PAGER=less
 if [[ "$OSTYPE" == darwin* ]]; then
@@ -87,6 +87,7 @@ export KEYTIMEOUT=1
 export SHELL_SESSIONS_DISABLE=1 # Make Apple Terminal behave.
 export GPG_TTY=$(tty) # Make GPG work in TTY.
 export LESSOPEN='|$ZDOTDIR/conf.d/.lessfilter %s'
+# export YSU_MESSAGE_FORMAT="$(tput setaf 6)Found existing %alias_type for %command: %alias$(tput sgr0)"
 
 # Use `< file` to quickly view the contents of any file.
 [[ -z "$READNULLCMD" ]] || READNULLCMD=$PAGER

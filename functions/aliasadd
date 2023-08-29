@@ -1,0 +1,26 @@
+#!/bin/zsh
+##? Add an alias to aliases
+
+if [ $# -lt 2 ]; then
+    echo "Usage: aliasadd <alias_name> <command>"
+    return 1
+fi
+
+# Store the alias name
+alias_name="$1"
+
+# Combine all arguments after the first one into the alias command
+shift
+command="$*"
+
+quote_command() {
+    # Only escape single quotes
+    echo "$command" | sed "s/'/'\\\\''/g; 1s/^/'/; \$s/\$/'/"
+}
+
+# Call the function
+escaped_command=$(quote_command)
+
+echo "alias $alias_name=$escaped_command" >> $ZDOTDIR/conf.d/aliases.personal.zsh
+. $ZDOTDIR/conf.d/aliases.personal.zsh
+echo "Alias $alias_name added for '$command'"

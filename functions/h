@@ -1,3 +1,0 @@
-#!/bin/zsh
-##? h - howdoi
-howdoi $* -c -n 3
