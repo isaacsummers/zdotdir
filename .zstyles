@@ -48,6 +48,7 @@ fi
 #
 # fzf-tab
 #
+# zstyle ':fzf-tab:complete:_zlua:*' query-string input
 zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 zstyle ':completion:*:git-checkout:*' sort false
 zstyle ':fzf-tab:*' prefix '♦ '
@@ -58,3 +59,5 @@ zstyle ':fzf-tab:complete:*:*' fzf-preview 'less ${(Q)realpath}'
 # Misc
 #
 zstyle -e ':autocomplete:list-choices:*' list-lines 'reply=( $(( LINES / 3 )) )'
+# bindkey '\t' fzf-tab-complete "$terminfo[kcbt]" fzf-tab-complete
+# bindkey -M menuselect '\t' fzf-tab-complete "$terminfo[kcbt]" fzf-tab-complete

@@ -69,9 +69,9 @@ belak/zsh-utils path:completion
 mattmc3/zephyr path:plugins/confd
 
 ## * ------------------------------- CUSTOM ------------------------------- * ##
-marlonrichert/zsh-autocomplete
-aloxaf/fzf-tab kind:defer
-freed-wu/fzf-tab-source kind:defer
+# marlonrichert/zsh-autocomplete
+aloxaf/fzf-tab
+freed-wu/fzf-tab-source
 
 ## * -------------------------- DEFERRED PLUGINS -------------------------- * ##
 wfxr/forgit kind:defer
