@@ -83,9 +83,3 @@ noexpand_aliases+=(
     cat
     brew
 )
-
-# add-zsh-hook precmd bind-tab
-# bind-tab() {
-#   bindkey '\t' fzf-tab-complete
-#   # bindkey $terminfo[kcbt] <your preferred shift-tab widget>
-# }

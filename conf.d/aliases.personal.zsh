@@ -98,6 +98,7 @@ alias gcrs='git-crypt status'
 
 # github cli
 alias ghrsd='gh repo set-default'
+alias ghrc='gh release create --generate-notes'
 
 # poetry
 alias ptr='poetry'
