@@ -78,6 +78,7 @@ noexpand_aliases+=(
     l
     ls
     ll
+    la
     lsa
     ldot
     cat

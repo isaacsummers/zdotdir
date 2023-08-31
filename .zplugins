@@ -1,6 +1,7 @@
 #
 # .zplugins - antidote plugins file
 #
+jeffreytse/zsh-vi-mode
 
 ## * ------------------------------ PRE-REQS ------------------------------ * ##
 mattmc3/zephyr path:plugins/zfunctions
@@ -51,6 +52,7 @@ mattmc3/zman
 fdellwing/zsh-bat
 nekofar/zsh-git-lfs
 unixorn/git-extra-commands
+ohmyzsh/ohmyzsh path:plugins/tmux
 
 ## * ----------------------------- COMPLETIONS ---------------------------- * ##
 ## johan/zsh kind:fpath path:completion/unix/command

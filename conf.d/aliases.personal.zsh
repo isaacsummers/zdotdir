@@ -20,8 +20,8 @@ alias gpgls='gpg -K --keyid-format SHORT'
 alias gpge='gpg --edit-key'
 
 # ls
-alias l='exa -la1 --icons' #
-alias ls="exa -lh --icons --no-permissions --no-user --group-directories-first"
+alias l='exa -la1 --icons --group-directories-first' #
+alias ls='exa -lh --icons --group-directories-first --octal-permissions'
 alias ll='exa -lh --icons --group-directories-first --octal-permissions'
 alias la='exa -lah --icons --group-directories-first --octal-permissions -d .*'
 alias lsa='exa -lah --icons --group-directories-first --octal-permissions'
