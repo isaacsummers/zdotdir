@@ -67,6 +67,9 @@ path=(
   # pipx
   $HOME/.local/bin(N)
 
+  # privado
+  $HOME/.privado/bin(N)
+
   # path
   $path
 )
@@ -87,10 +90,12 @@ export KEYTIMEOUT=1
 export SHELL_SESSIONS_DISABLE=1 # Make Apple Terminal behave.
 export GPG_TTY=$(tty) # Make GPG work in TTY.
 export LESSOPEN='|$ZDOTDIR/conf.d/.lessfilter %s'
+export LESS="-R"
 # export ZSH_TMUX_AUTOSTART=true
 export ZSH_TMUX_AUTOSTART_ONCE=true
 export ZSH_TMUX_CONFIG="${TMUX_CONFIG:-$XDG_CONFIG_HOME/tmux/tmux.conf}"
-# export YSU_MESSAGE_FORMAT="$(tput setaf 6)Found existing %alias_type for %command: %alias$(tput sgr0)"
+# export FORGIT_GLO_FORMAT='%C(auto)%h%d %s %C(black)%C(bold)%cr%reset'
+export FORGIT_GLO_FORMAT='%C(auto)%h%d %p %s %C(bold black)<%an> %cr%Creset'
 
 # Use `< file` to quickly view the contents of any file.
 [[ -z "$READNULLCMD" ]] || READNULLCMD=$PAGER

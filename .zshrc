@@ -83,4 +83,6 @@ noexpand_aliases+=(
     ldot
     cat
     brew
+    z
+    take
 )

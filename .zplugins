@@ -1,7 +1,7 @@
 #
 # .zplugins - antidote plugins file
 #
-jeffreytse/zsh-vi-mode
+# jeffreytse/zsh-vi-mode
 
 ## * ------------------------------ PRE-REQS ------------------------------ * ##
 mattmc3/zephyr path:plugins/zfunctions
@@ -81,6 +81,7 @@ zdharma-continuum/fast-syntax-highlighting kind:defer
 zsh-users/zsh-autosuggestions kind:defer
 zsh-users/zsh-history-substring-search kind:defer
 amstrad/oh-my-matrix kind:defer
+rupa/z kind:defer
 # michaelaquilina/zsh-you-should-use kind:defer
 
 # vim: ft=zsh sw=2 ts=2 et

@@ -48,13 +48,19 @@ fi
 #
 # fzf-tab
 #
-# zstyle ':fzf-tab:complete:_zlua:*' query-string input
-zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
-zstyle ':completion:*:git-checkout:*' sort false
-zstyle ':fzf-tab:*' prefix '♦ '
-
+# zstyle ':fzf-tab:*' prefix '♦ '
+# zstyle ':fzf-tab:complete:*' fzf-preview 'less ${(Q)realpath}'
 zstyle ':fzf-tab:complete:*:*' fzf-preview 'less ${(Q)realpath}'
+# export LESSOPEN='|$ZDOTDIR/conf.d/.lessfilter %s'
+# zstyle ':fzf-tab:complete:_zlua:*' query-string input
+# zstyle ':fzf-tab:complete:*:*' fzf-preview 'echo "DEBUG: ${(Q)realpath}"'
 
+zstyle ':completion:*:git-checkout:*' sort false
+zstyle ':fzf-tab:*' print-query alt-enter
+zstyle ':fzf-tab:*' single-group color header
+
+# zstyle ':fzf-tab:complete:(\\|)run-help:*' fzf-preview 'run-help $word'
+# zstyle ':fzf-tab:complete:(\\|*/|)man:*' fzf-preview 'man $word'
 #
 # Misc
 #
