@@ -63,6 +63,7 @@ esc/conda-zsh-completion kind:fpath
 ohmyzsh/ohmyzsh path:plugins/git
 ohmyzsh/ohmyzsh path:plugins/gitfast
 bobthecow/git-flow-completion
+$HOMEBREW_PREFIX/share/zsh/site-functions kind:fpath
 
 ## * -------------------------------- FINAL ------------------------------- * ##
 clarketm/zsh-completions kind:fpath

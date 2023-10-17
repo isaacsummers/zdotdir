@@ -53,8 +53,8 @@ path=(
 
   # core
   $HOME/{,s}bin(N)
+  $HOMEBREW_PREFIX/{,s}bin(N)
   /opt/{homebrew,local,linuxbrew}/{,s}bin(N)
-  /home/linuxbrew/.linuxbrew/{,s}bin(N)
   /usr/local/{,s}bin(N)
 
   # emacs
