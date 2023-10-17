@@ -7,7 +7,7 @@
 alias zprofrc="ZPROFRC=1 zsh"
 
 # completions
-autoload -Uz compinit
+autoload -Uz compinit bashcompinit
 
 ZSH_COMPDUMP=${ZSH_COMPDUMP:-${ZDOTDIR:-~}/.zcompdump}
 
