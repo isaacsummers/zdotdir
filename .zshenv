@@ -2,6 +2,7 @@
 # .zshenv - Zsh environment file, loaded always.
 #
 
+setopt extendedglob
 export ZDOTDIR=~/.config/zsh
 
 # XDG
@@ -26,6 +27,11 @@ export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 export C_INCLUDE_PATH="/opt/homebrew/opt/graphviz/include"
 
+# Locale
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+
 # Ensure path arrays do not contain duplicates.
 typeset -gU fpath path cdpath
 
@@ -43,10 +49,12 @@ path=(
 
   # conda
   $HOME/miniconda3/bin(N)
+  $HOME/opt/anaconda3/bin(N)
 
   # core
   $HOME/{,s}bin(N)
-  /opt/{homebrew,local}/{,s}bin(N)
+  /opt/{homebrew,local,linuxbrew}/{,s}bin(N)
+  /home/linuxbrew/.linuxbrew/{,s}bin(N)
   /usr/local/{,s}bin(N)
 
   # emacs
@@ -76,7 +84,7 @@ path=(
 
 # Apps
 export EDITOR=nvim
-export VISUAL=code-insiders
+export VISUAL=code
 export PAGER=less
 if [[ "$OSTYPE" == darwin* ]]; then
   export BROWSER='open'
@@ -95,7 +103,10 @@ export LESS="-R"
 export ZSH_TMUX_AUTOSTART_ONCE=true
 export ZSH_TMUX_CONFIG="${TMUX_CONFIG:-$XDG_CONFIG_HOME/tmux/tmux.conf}"
 # export FORGIT_GLO_FORMAT='%C(auto)%h%d %s %C(black)%C(bold)%cr%reset'
-export FORGIT_GLO_FORMAT='%C(auto)%h%d %p %s %C(bold black)<%an> %cr%Creset'
+
+# test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
+# test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# eval "$($(brew --prefix)/bin/brew shellenv)"
 
 # Use `< file` to quickly view the contents of any file.
 [[ -z "$READNULLCMD" ]] || READNULLCMD=$PAGER

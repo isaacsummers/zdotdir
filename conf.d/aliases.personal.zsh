@@ -20,9 +20,9 @@ alias gpgls='gpg -K --keyid-format SHORT'
 alias gpge='gpg --edit-key'
 
 # ls
-alias ls='exa --git -hl --icons --group-directories-first --no-permissions --octal-permissions --color=always --no-filesize --no-user --no-time'
+alias ls='eza --git -hl --icons --group-directories-first --no-permissions --octal-permissions --color=always --no-filesize --no-user --no-time'
 alias lsa='ls -a'
-alias l='exa --git -hl --icons --group-directories-first --octal-permissions' #
+alias l='eza --git -hl --icons --group-directories-first --octal-permissions' #
 alias la='l -a'
 alias ldot='lsa -d .*'
 alias ppath='echo ${PATH//:/\\n}'
@@ -31,6 +31,10 @@ alias ag='alias | grep'
 
 # dir
 alias take='function _take(){ mkdir -p "$@" && cd "$_"; }; _take'
+
+# python
+alias py='python3'
+alias python='python3'
 
 # pyenv
 alias pye='pyenv'
@@ -144,11 +148,11 @@ alias ht='navi --tldr'
 alias hh='navi fn welcome'
 
 # misc
-alias code='code-insiders'
-alias coden='code-insiders -n'
+alias code='code'
+alias coden='code -n'
 alias code.='code -n .'
 alias vimrc='nvim $HOME/.vimrc'
-alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
+# alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 alias vi='nvim'
 alias vim='nvim'
 alias fzfe='enable-fzf-tab'
