@@ -29,14 +29,16 @@ if [[ $project_dir = '~/'* ]]; then
   project_dir=${project_dir:s/~/$HOME}
 fi
 
+echo "project_dir: $project_dir"
+
 if [[ ! -d $project_dir ]]; then
   echo >&2 "prj: Project home directory not found '$project_dir'"
   return 1
 fi
 
 local projects=(
-  $project_dir/*/.git/..
-  $project_dir/*/*/.git/..
+  $project_dir/*/.git/..(N)
+  $project_dir/*/*/.git/..(N)
 )
 
 # absolute path with project dir prefix stripped
