@@ -8,6 +8,7 @@ evals[thefuck]="thefuck --alias"
 evals[ngrok]="ngrok completion" 
 evals[navi]="navi widget zsh"
 evals[pipx]="register-python-argcomplete pipx"
+evals[pip]="pip completion --zsh"
 
 # Using associative arrays in zsh with loops:
 for name in "${(@k)evals}"; do

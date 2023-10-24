@@ -1,0 +1,27 @@
+#compdef cookiecutter
+
+_arguments -s -S\
+    {-V,--version}"[Show the version and exit.]"\
+    "--no-input[Do not prompt for parameters and only use cookiecutter.json file content]"\
+    {-c,--checkout}"[branch, tag or commit to checkout after git clone]:TEXT"\
+    {-v,--verbose}"[Print debug information]"\
+    "--replay[Do not prompt for parameters and only use information entered previously]"\
+    {-f,--overwrite-if-exists}"[Overwrite the contents of the output directory if it already exists]"\
+    {-o,--output-dir}"[Where to output the generated project dir into]:output directory:_files"\
+    "--config-file[User configuration file]:config file:_files"\
+    "--default-config[Do not load a config file. Use the defaults instead]"\
+    {-h,--help}"[Show this message and exit.]"\
+    '*:TEMPLATE:->template'
+
+_compadd_cookiecutter() {
+    repository_dir=$1
+    cutters=("${(@f)$(ls -d $repository_dir/cookiecutter-* | sed "s:$repository_dir/cookiecutter-::g")}")
+    compadd -X "%BLocal Templates%b" -P "$repository_dir/cookiecutter-" $cutters
+}
+
+case $state in
+    template)
+        _compadd_cookiecutter $HOME/Templates
+        _compadd_cookiecutter $HOME/.cookiecutters
+        ;;
+esac
