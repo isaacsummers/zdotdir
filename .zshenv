@@ -27,6 +27,9 @@ export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 export C_INCLUDE_PATH="/opt/homebrew/opt/graphviz/include"
 
+# PNPM
+export PNPM_HOME="$XDG_DATA_HOME/pnpm"
+
 # Locale
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -76,6 +79,12 @@ path=(
   # pipx
   $HOME/.local/bin(N)
 
+  # rust
+  $XDG_DATA_HOME/cargo/bin(N)
+
+  # pnpm
+  $XDG_DATA_HOME/pnpm
+
   # privado
   $HOME/.privado/bin(N)
 
@@ -97,7 +106,10 @@ export LANG='en_US.UTF-8'
 # Misc
 export KEYTIMEOUT=1
 export SHELL_SESSIONS_DISABLE=1 # Make Apple Terminal behave.
-export GPG_TTY=$(tty) # Make GPG work in TTY.
+
+GPG_TTY=$(tty) # Make GPG work in TTY.
+export GPG_TTY
+
 export LESSOPEN='|$ZDOTDIR/conf.d/.lessfilter %s'
 export LESS="-R"
 # export ZSH_TMUX_AUTOSTART=true

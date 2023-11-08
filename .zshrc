@@ -68,6 +68,14 @@ true
 # unset __conda_setup
 # # <<< conda initialize <<<
 
+# pnpm
+# export PNPM_HOME="/home/isaac/.local/share/pnpm"
+# case ":$PATH:" in
+#   *":$PNPM_HOME:"*) ;;
+#   *) export PATH="$PNPM_HOME:$PATH" ;;
+# esac
+# pnpm end
+
 zstyle -d ':completion:*' format
 zstyle ':completion:*:descriptions' format '[%d]'
 
@@ -87,11 +95,3 @@ noexpand_aliases+=(
     take
     tmux
 )
-
-# pnpm
-# export PNPM_HOME="/home/isaac/.local/share/pnpm"
-# case ":$PATH:" in
-#   *":$PNPM_HOME:"*) ;;
-#   *) export PATH="$PNPM_HOME:$PATH" ;;
-# esac
-# pnpm end

@@ -148,9 +148,16 @@ alias ht='navi --tldr'
 alias hh='navi fn welcome'
 
 # misc
+if [[ $OSTYPE == darwin* ]]; then
 alias code='code'
-alias coden='code -n'
+
+# elif [[ $OSTYPE == linux* ]]; then
+# alias code=''
+fi
+
 alias code.='code -n .'
+alias coden='code -n'
+
 alias vimrc='nvim $HOME/.vimrc'
 # alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 alias vi='nvim'
@@ -161,3 +168,5 @@ alias ngtcp='ngrok tpc 22'
 alias ng='ngrok'
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
+
+alias pipreq='pip freeze >| requirements.txt'

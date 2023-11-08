@@ -27,7 +27,8 @@ fish_style_pwd_dir_length = 1
 
 # right prompt uses left space padding
 [git_branch]
-format = '([$branch]($style) )'
+format = '([$branch]($style) )([$remote_name](red)/[$remote_branch](blue) )'
+always_show_remote = true
 style = 'green'
 
 [git_status]
