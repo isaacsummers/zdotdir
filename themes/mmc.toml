@@ -43,6 +43,7 @@ when = 'test -n "$(git status --porcelain 2>/dev/null)"'
 symbol = "↔"
 style = "red"
 format="[$symbol ]($style)"
+ignore_timeout=true
 shell = ["zsh"]
 
 [cmd_duration]
