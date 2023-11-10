@@ -170,3 +170,5 @@ alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 
 alias pipreq='pip freeze >| requirements.txt'
+alias wslver='lsb_release -a'
+alias gpgclear='echo "test" | gpg --clearsign'

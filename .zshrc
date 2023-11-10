@@ -44,9 +44,6 @@ antidote load
 prompt starship mmc
 #prompt p10k pure
 
-# gpg
-export GPG_TTY=$(tty)
-
 # done profiling
 [[ -z "$ZPROFRC" ]] || zprof
 
