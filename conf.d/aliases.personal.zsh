@@ -76,6 +76,7 @@ alias glsfz='git ls-files -z'
 alias gignoredir='git ls-files -z | xargs -0 git update-index --assume-unchanged'
 alias gunignoredir='git ls-files -z | xargs -0 git update-index --no-assume-unchanged'
 alias gt='git tag'
+alias git_current_branch="git-current-branch"
 
 # git flow
 alias gfl='git-flow'

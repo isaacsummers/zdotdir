@@ -52,16 +52,16 @@ mattmc3/zman
 ## * ------------------------------- CUSTOM ------------------------------- * ##
 fdellwing/zsh-bat
 nekofar/zsh-git-lfs
-unixorn/git-extra-commands
 ohmyzsh/ohmyzsh path:plugins/tmux
+ohmyzsh/ohmyzsh path:plugins/gitfast
+ohmyzsh/ohmyzsh path:plugins/git
+unixorn/git-extra-commands
 
 ## * ----------------------------- COMPLETIONS ---------------------------- * ##
 ## johan/zsh kind:fpath path:completion/unix/command
 ohmyzsh/ohmyzsh kind:fpath path:plugins/git
 docker/cli kind:fpath path:contrib/completion/zsh
 esc/conda-zsh-completion kind:fpath
-ohmyzsh/ohmyzsh path:plugins/git
-ohmyzsh/ohmyzsh path:plugins/gitfast
 bobthecow/git-flow-completion
 $HOMEBREW_PREFIX/share/zsh/site-functions kind:fpath
 

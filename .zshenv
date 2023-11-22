@@ -3,6 +3,7 @@
 #
 
 setopt extendedglob
+
 export ZDOTDIR=~/.config/zsh
 
 # XDG
