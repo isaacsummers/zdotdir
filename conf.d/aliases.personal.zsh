@@ -172,4 +172,6 @@ alias pbpaste='xclip -selection clipboard -o'
 
 alias pipreq='pip freeze >| requirements.txt'
 alias wslver='lsb_release -a'
-alias gpgclear='echo "test" | gpg --clearsign'
+alias gpgclear='echo "init" | gpg --clearsign'
+alias gpgkill="gpgconf --kill gpg-agent"
+alias gpgt='gpg-tui'
