@@ -48,6 +48,7 @@ cdpath=(
 
 # Set the list of directories that Zsh searches for programs.
 path=(
+
   # pyenv
   $PYENV_ROOT/bin(N)
 
@@ -129,3 +130,4 @@ export ZSH_TMUX_CONFIG="${TMUX_CONFIG:-$XDG_CONFIG_HOME/tmux/tmux.conf}"
 [[ -z "$READNULLCMD" ]] || READNULLCMD=$PAGER
 
 # vim: ft=zsh sw=2 ts=2 et
+
