@@ -6,25 +6,6 @@
 [[ -z "$ZPROFRC" ]] || zmodload zsh/zprof
 alias zprofrc="ZPROFRC=1 zsh"
 
-# completions
-autoload -Uz compinit bashcompinit
-
-ZSH_COMPDUMP=${ZSH_COMPDUMP:-${ZDOTDIR:-~}/.zcompdump}
-
-# cache .zcompdump for about a day
-if [[ $ZSH_COMPDUMP(#qNmh-20) ]]; then
-  compinit -C -d "$ZSH_COMPDUMP"
-else
-  compinit -i -d "$ZSH_COMPDUMP"; touch "$ZSH_COMPDUMP"
-fi
-
-{
-  # compile .zcompdump
-  if [[ -s "$ZSH_COMPDUMP" && (! -s "${ZSH_COMPDUMP}.zwc" || "$ZSH_COMPDUMP" -nt "${ZSH_COMPDUMP}.zwc") ]]; then
-    zcompile "$ZSH_COMPDUMP"
-  fi
-} &!
-
 # zstyles
 [[ -r $ZDOTDIR/.zstyles ]] && . $ZDOTDIR/.zstyles
 
@@ -44,12 +25,24 @@ antidote load
 prompt starship mmc
 #prompt p10k pure
 
-# done profiling
-[[ -z "$ZPROFRC" ]] || zprof
+# completions
+autoload -Uz compinit bashcompinit
 
-# cleanup
-unset ZPROFRC zplugins
-true
+ZSH_COMPDUMP=${ZSH_COMPDUMP:-${ZDOTDIR:-~}/.zcompdump}
+
+# cache .zcompdump for about a day
+if [[ $ZSH_COMPDUMP(#qNmh-21) ]]; then
+  compinit -C -d "$ZSH_COMPDUMP"
+else
+  compinit -i -d "$ZSH_COMPDUMP"; touch "$ZSH_COMPDUMP"
+fi
+
+{
+  # compile .zcompdump
+  if [[ -s "$ZSH_COMPDUMP" && (! -s "${ZSH_COMPDUMP}.zwc" || "$ZSH_COMPDUMP" -nt "${ZSH_COMPDUMP}.zwc") ]]; then
+    zcompile "$ZSH_COMPDUMP"
+  fi
+} &!
 
 # vim: ft=zsh sw=2 ts=2 et
 # # >>> conda initialize >>>
@@ -65,6 +58,13 @@ fi
 #   *) export PATH="$PNPM_HOME:$PATH" ;;
 # esac
 # pnpm end
+
+# done profiling
+[[ -z "$ZPROFRC" ]] || zprof
+
+# cleanup
+unset ZPROFRC zplugins
+true
 
 zstyle -d ':completion:*' format
 zstyle ':completion:*:descriptions' format '[%d]'
