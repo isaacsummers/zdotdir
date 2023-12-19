@@ -59,12 +59,12 @@ unixorn/git-extra-commands
 
 ## * ----------------------------- COMPLETIONS ---------------------------- * ##
 ## johan/zsh kind:fpath path:completion/unix/command
+$HOMEBREW_PREFIX/share/zsh/site-functions kind:fpath
 ohmyzsh/ohmyzsh kind:fpath path:plugins/git
 docker/cli kind:fpath path:contrib/completion/zsh
 esc/conda-zsh-completion kind:fpath
 bobthecow/git-flow-completion
 ogham/exa kind:fpath path:completions/zsh
-$HOMEBREW_PREFIX/share/zsh/site-functions kind:fpath
 
 ## * -------------------------------- FINAL ------------------------------- * ##
 clarketm/zsh-completions kind:fpath

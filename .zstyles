@@ -46,6 +46,12 @@ fi
 # vim: ft=zsh sw=2 ts=2 et
 
 #
+# docker
+#
+zstyle ':completion:*:*:docker:*' option-stacking yes
+zstyle ':completion:*:*:docker-*:*' option-stacking yes
+
+#
 # fzf-tab
 #
 # zstyle ':fzf-tab:*' prefix '♦ '

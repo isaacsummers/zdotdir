@@ -96,7 +96,7 @@ path=(
 
 # Apps
 export EDITOR=nvim
-export VISUAL=code
+export VISUAL=code-insiders
 export PAGER=less
 if [[ "$OSTYPE" == darwin* ]]; then
   export BROWSER='open'

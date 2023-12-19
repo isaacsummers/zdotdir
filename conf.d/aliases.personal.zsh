@@ -150,14 +150,15 @@ alias hh='navi fn welcome'
 
 # misc
 if [[ $OSTYPE == darwin* ]]; then
-alias code='code'
+alias code='$VISUAL'
 
 # elif [[ $OSTYPE == linux* ]]; then
 # alias code=''
 fi
 
-alias code.='code -n .'
-alias coden='code -n'
+alias code='$VISUAL'
+alias code.='$VISUAL -n .'
+alias coden='$VISUAL -n'
 
 alias vimrc='nvim $HOME/.vimrc'
 # alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
