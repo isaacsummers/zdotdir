@@ -66,7 +66,7 @@ if ! pgrep -x "gpg-agent" > /dev/null; then
   eval $(gpgconf --launch gpg-agent)
   echo "test" | gpg --clearsign --pinentry-mode loopback > /dev/null
 fi
-export GPG_TTY=$(tty)
+export GPG_TTY=$TTY
 
 # done profiling
 [[ -z "$ZPROFRC" ]] || zprof
