@@ -1,0 +1,7 @@
+#!/bin/zsh
+##? gpglogin - login to gpg agent
+export GPG_TTY=$TTY
+# Sign the string "test" with GPG, which requires entering the password.
+# Then the password will be cached and you don't need to enter it next time.
+# Redirect the output to null so it won't be displayed in the terminal.
+echo "test" | gpg --clearsign > /dev/null 2>&1
