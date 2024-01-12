@@ -176,3 +176,25 @@ alias wslver='lsb_release -a'
 alias gpgclear='echo "init" | gpg --clearsign'
 alias gpgkill="gpgconf --kill gpg-agent"
 alias gpgt='gpg-tui'
+
+alias dvault='dotenv-vault'
+
+# forgit
+forgit_log=glo
+forgit_diff=gd
+forgit_add=ga
+forgit_reset_head=grh
+forgit_ignore=gi
+forgit_checkout_file=gcf
+forgit_checkout_branch=gco
+forgit_branch_delete=gbd
+forgit_checkout_tag=gct
+forgit_checkout_commit=gcc
+forgit_revert_commit=grc
+forgit_clean=gclean
+forgit_stash_show=gss
+forgit_stash_push=gsp
+forgit_cherry_pick=gcp
+forgit_rebase=grb
+forgit_blame=gbl
+forgit_fixup=gfu
