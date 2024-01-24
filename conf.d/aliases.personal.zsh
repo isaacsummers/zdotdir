@@ -56,6 +56,7 @@ alias pipunall='pip uninstall -yr <(pip freeze)'
 
 # git
 alias gmv='git mv'
+alias gmc='git merge --continue'
 alias gbnma='git branch --all --no-merged'
 alias gbmm='git branch --merged main'
 alias gbmd='git branch --merged develop'
