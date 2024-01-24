@@ -78,7 +78,7 @@ alias autorotate="jhead -autorot"
 
 # dotfiles
 alias dotf='cd "$DOTFILES"'
-alias dotfed='cd "$DOTFILES" && ${VISUAL:-${EDITOR:-vim}} .'
+alias dotfed='cd "$DOTFILES" && ${CURSOR:-${EDITOR:-vim}} .'
 alias dotfl="cd \$DOTFILES/local"
 alias fdot='cd ${XDG_CONFIG_HOME:=$HOME/.config}/fish'
 alias fconf=fdot
@@ -89,7 +89,7 @@ alias setjavahome="export JAVA_HOME=\`/usr/libexec/java_home\`"
 
 # todo-txt
 alias t="todo.sh"
-alias todos="$VISUAL $HOME/Desktop/todo.txt"
+alias todos="$CURSOR $HOME/Desktop/todo.txt"
 
 #
 # noexpand
