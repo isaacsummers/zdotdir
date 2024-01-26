@@ -1,9 +1,9 @@
 
-
 typeset -A evals
 evals[pyenv]="pyenv init -"
 evals[virtualenv]="pyenv virtualenv-init -"
 evals[thefuck]="thefuck --alias"
+# evals[thefuck]="thefuck --alias --enable-experimental-instant-mode"
 # evals[bw]="bw completion --shell zsh"
 evals[ngrok]="ngrok completion" 
 evals[navi]="navi widget zsh"
