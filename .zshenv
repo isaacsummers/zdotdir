@@ -126,9 +126,6 @@ export ZSH_TMUX_AUTOSTART_ONCE=true
 export ZSH_TMUX_CONFIG="${TMUX_CONFIG:-$XDG_CONFIG_HOME/tmux/tmux.conf}"
 # export FORGIT_GLO_FORMAT='%C(auto)%h%d %s %C(black)%C(bold)%cr%reset'
 
-# test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
-# test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-# eval "$($(brew --prefix)/bin/brew shellenv)"
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 

@@ -68,6 +68,8 @@ if ! pgrep -x "gpg-agent" > /dev/null; then
 fi
 export GPG_TTY=$TTY
 
+eval $(thefuck --alias)
+
 # done profiling
 [[ -z "$ZPROFRC" ]] || zprof
 
