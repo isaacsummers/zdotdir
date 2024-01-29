@@ -64,7 +64,7 @@ fi
 
 if ! pgrep -x "gpg-agent" > /dev/null; then
   eval $(gpgconf --launch gpg-agent)
-  if ! gpg --list-keys YOUR_KEY_ID > /dev/null; then
+  if ! gpg --list-keys > /dev/null; then
     echo "Login to gpg-agent..."
     gpglogin
   fi
