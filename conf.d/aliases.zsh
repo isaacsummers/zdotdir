@@ -89,7 +89,7 @@ alias setjavahome="export JAVA_HOME=\`/usr/libexec/java_home\`"
 
 # todo-txt
 alias t="todo.sh"
-alias todos="$CURSOR $HOME/Desktop/todo.txt"
+alias todos="$VISUAL $HOME/Desktop/todo.txt"
 
 #
 # noexpand

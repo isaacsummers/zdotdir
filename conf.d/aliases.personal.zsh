@@ -14,7 +14,6 @@ alias sshcreate='cd $HOME/.ssh && ssh-keygen -t ed25519 -C ${HOST%%.local}'
 alias sshlist='ssh-add -l'
 
 # gpg
-alias gpg2='gpg'
 alias gpgl='gpg -k --keyid-format SHORT'
 alias gpgls='gpg -K --keyid-format SHORT'
 alias gpge='gpg --edit-key'
@@ -151,34 +150,11 @@ alias hh='navi fn welcome'
 
 # misc
 if [[ $OSTYPE == darwin* ]]; then
-alias code='$CURSOR'
+alias code='$VISUAL'
 
 # elif [[ $OSTYPE == linux* ]]; then
 # alias code=''
 fi
-
-alias code='$CURSOR'
-alias code.='$CURSOR -n .'
-alias coden='$CURSOR -n'
-
-alias vimrc='nvim $HOME/.vimrc'
-# alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
-alias vi='nvim'
-alias vim='nvim'
-alias fzfe='enable-fzf-tab'
-alias ngtunnel='ngrok http --domain=drake-model-bonefish.ngrok-free.app 80'
-alias ngtcp='ngrok tpc 22'
-alias ng='ngrok'
-alias pbcopy='xclip -selection clipboard'
-alias pbpaste='xclip -selection clipboard -o'
-
-alias pipreq='pip freeze >| requirements.txt'
-alias wslver='lsb_release -a'
-alias gpgclear='echo "init" | gpg --clearsign'
-alias gpgkill="gpgconf --kill gpg-agent"
-alias gpgt='gpg-tui'
-
-alias dvault='dotenv-vault'
 
 # forgit
 forgit_log=glo
@@ -199,3 +175,28 @@ forgit_cherry_pick=gcp
 forgit_rebase=grb
 forgit_blame=gbl
 forgit_fixup=gfu
+
+alias code='$VISUAL'
+alias code.='$VISUAL -n .'
+alias coden='$VISUAL -n'
+
+alias vimrc='nvim $HOME/.vimrc'
+# alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
+alias vi='nvim'
+alias vim='nvim'
+alias fzfe='enable-fzf-tab'
+alias ngtunnel='ngrok http --domain=drake-model-bonefish.ngrok-free.app 80'
+alias ngtcp='ngrok tpc 22'
+alias ng='ngrok'
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
+
+alias pipreq='pip freeze >| requirements.txt'
+alias wslver='lsb_release -a'
+alias gpgclear='echo "init" | gpg --clearsign'
+alias gpgkill="gpgconf --kill gpg-agent"
+alias gpgt='gpg-tui'
+
+alias dvault='dotenv-vault'
+alias pytest='python -m unittest'
+

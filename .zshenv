@@ -113,10 +113,10 @@ export LANG='en_US.UTF-8'
 export KEYTIMEOUT=1
 export SHELL_SESSIONS_DISABLE=1 # Make Apple Terminal behave.
 
-if ! pgrep -x "gpg-agent" > /dev/null; then
-  eval $(gpgconf --launch gpg-agent)
-  echo "test" | gpg --clearsign --pinentry-mode loopback > /dev/null
-fi
+# if ! pgrep -x "gpg-agent" > /dev/null; then
+#   eval $(gpgconf --launch gpg-agent)
+#   echo "test" | gpg --clearsign --pinentry-mode loopback > /dev/null
+# fi
 export GPG_TTY=$TTY
 
 export LESSOPEN='|$ZDOTDIR/conf.d/.lessfilter %s'

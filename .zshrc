@@ -64,7 +64,10 @@ fi
 
 if ! pgrep -x "gpg-agent" > /dev/null; then
   eval $(gpgconf --launch gpg-agent)
-  echo "test" | gpg --clearsign --pinentry-mode loopback > /dev/null
+  if ! gpg --list-keys YOUR_KEY_ID > /dev/null; then
+    echo "Login to gpg-agent..."
+    gpglogin
+  fi
 fi
 export GPG_TTY=$TTY
 
