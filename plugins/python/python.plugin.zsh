@@ -16,7 +16,8 @@ alias py3='python3'
 alias py='python3'
 alias pip2update="pip2 list --outdated | cut -d ' ' -f1 | xargs -n1 pip2 install -U"
 alias pip3update="pip3 list --outdated | cut -d ' ' -f1 | xargs -n1 pip3 install -U"
-alias pipup="pip3 list --outdated | cut -d ' ' -f1 | xargs -n1 pip3 install -U"
+alias pipupall="pip3 list --outdated | cut -d ' ' -f1 | xargs -n1 pip3 install -U"
+alias pipup='pip3 install -U pip'
 alias pyfind='find . -name "*.py"'
 alias pygrep='grep --include="*.py"'
 alias pyva="source .venv/bin/activate"
