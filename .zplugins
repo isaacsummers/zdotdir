@@ -11,7 +11,7 @@ mbadolato/iTerm2-Color-Schemes kind:clone
 
 ## * ------------------------------- ZEPHYR ------------------------------- * ##
 mattmc3/zephyr path:plugins/environment
-mattmc3/zephyr path:plugins/clipboard
+# mattmc3/zephyr path:plugins/clipboard
 mattmc3/zephyr path:plugins/color
 mattmc3/zephyr path:plugins/directory
 mattmc3/zephyr path:plugins/editor

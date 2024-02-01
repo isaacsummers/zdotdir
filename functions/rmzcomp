@@ -1,6 +1,6 @@
 #!/bin/zsh
 if [[ "$1" == "--help" ]] || [[ "$1" == "-h" ]]; then
-  echo "rmzcompdump"
+  echo "rmzcomp"
   echo "  removes zcompdump files"
   echo "options:"
   echo " -q         Quiet"

@@ -10,7 +10,7 @@ alias zprofrc="ZPROFRC=1 zsh"
 [[ -r $ZDOTDIR/.zstyles ]] && . $ZDOTDIR/.zstyles
 
 # use antidote for plugin management
-export ANTIDOTE_HOME=${XDG_CACHE_HOME:=~/.cache}/repos
+# export ANTIDOTE_HOME=${XDG_CACHE_HOME:=~/.cache}/repos
 [[ -d $ANTIDOTE_HOME/mattmc3/antidote ]] ||
   git clone --depth 1 --quiet https://github.com/mattmc3/antidote $ANTIDOTE_HOME/mattmc3/antidote
 
@@ -26,7 +26,9 @@ prompt starship mmc
 #prompt p10k pure
 
 # completions
-autoload -Uz compinit bashcompinit
+autoload -Uz compinit && compinit
+#  bashcompinit
+# bashcompinit
 
 ZSH_COMPDUMP=${ZSH_COMPDUMP:-${ZDOTDIR:-~}/.zcompdump}
 

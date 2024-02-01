@@ -17,7 +17,7 @@ export XDG_PROJECTS_DIR=~/Projects
 # Custom
 export DOTFILES=$XDG_CONFIG_HOME/dotfiles
 export GNUPGHOME=$XDG_DATA_HOME/gnupg
-export REPO_HOME=$XDG_CACHE_HOME/repos
+export REPO_HOME=${${ZDOTDIR:+$ZDOTDIR/.cache}:-${XDG_CACHE_HOME:=~/.cache}}/repos
 export ANTIDOTE_HOME=$REPO_HOME
 
 # Pyenv
