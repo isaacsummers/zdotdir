@@ -200,3 +200,5 @@ alias gpgt='gpg-tui'
 alias dvault='dotenv-vault'
 alias pytest='python -m unittest'
 
+alias pfpath='print -l $fpath'
+alias ckct='cookiecutter'
