@@ -1,13 +1,24 @@
 #Requires AutoHotkey v2.0
+#SingleInstance Force
+
+#HotIf
+
+;/* ------------------------ ADD GROUPS FOR EXCLUSION ------------------------ */
+GroupAdd "Exclude", "ahk_class Respawn001"
+#HotIf not WinActive("ahk_group Exclude")
+;/* ------------------------ ADD GROUPS FOR EXCLUSION ------------------------ */
+
+*Capslock::SetCapsLockState "AlwaysOff"
 
 CapsLock & *:: Return
 CapsLock:: Send "{Esc}"
 
-CapsLock & Esc:: 
+CapsLock & Esc::
 {
     SetCapsLockState (GetKeyState("CapsLock", "T")) ? "Off" : "On"
-    return
 }
+
+CapsLock & Space:: Return
 
 ; copypaste
 CapsLock & u:: Send "^c"
@@ -30,7 +41,8 @@ CapsLock & t:: Send "{Up}"
 CapsLock & n:: Send "{Right}"
 CapsLock & S:: Send "{End}"
 
-; bmwvz
+; xbmwvz
+CapsLock & x:: Send "{*}"
 CapsLock & b:: Send "{#}"
 CapsLock & m:: Send "{%}"
 CapsLock & w:: Send "{&}"
@@ -43,30 +55,6 @@ CapsLock & ,:: Send "^{F4}"
 CapsLock & z::
 Capslock & =:: Send "^/"
 
-;--- alt key mods
-#HotIf GetKeyState("Alt")
-CapsLock & d:: Send "!{Left}"
-CapsLock & h:: Send "!{Down}"
-CapsLock & t:: Send "!{Up}"
-CapsLock & n:: Send "!{Right}"
-CapsLock & /:: Send "{!}"
-#HotIf
-
-;--- shift key mods
-#HotIf GetKeyState("Shift")
-CapsLock & d:: Send "+{Left}"
-CapsLock & h:: Send "+{Down}"
-CapsLock & t:: Send "+{Up}"
-CapsLock & n:: Send "+{Right}"
-#HotIf
-
-;--- ctrl key mods
-#HotIf GetKeyState("Ctrl")
-CapsLock & d:: Send "^{Left}"
-CapsLock & h:: Send "^{Down}"
-CapsLock & t:: Send "^{Up}"
-CapsLock & n:: Send "^{Right}"
-#HotIf
 
 ~LShift::
 {
@@ -110,3 +98,7 @@ SC029 & z:: Send "."
 !SC029:: Send "!{SC029}"
 ^SC029:: Send "^{SC029}"
 +SC029:: Send "+{SC029}"
+
+; emails
+:*:zzi::isaac.summers@icloud.com
+:*:zzh::isaac_summers@hakkoda.io
