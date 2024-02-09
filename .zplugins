@@ -66,6 +66,7 @@ docker/cli kind:fpath path:contrib/completion/zsh kind:fpath
 esc/conda-zsh-completion kind:fpath
 bobthecow/git-flow-completion
 ogham/exa kind:fpath path:completions/zsh
+# "g-plane/pnpm-shell-completion"
 
 ## * -------------------------------- FINAL ------------------------------- * ##
 clarketm/zsh-completions kind:fpath

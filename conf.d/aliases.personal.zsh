@@ -202,3 +202,5 @@ alias pytest='python -m unittest'
 
 alias pfpath='print -l $fpath'
 alias ckct='cookiecutter'
+alias aptup='apt update && apt upgrade'
+alias saptup='sudo apt update && sudo apt upgrade'
