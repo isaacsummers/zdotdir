@@ -9,6 +9,9 @@ alias zprofrc="ZPROFRC=1 zsh"
 # zstyles
 [[ -r $ZDOTDIR/.zstyles ]] && . $ZDOTDIR/.zstyles
 
+# zsh custom
+ZSH_CUSTOM=${ZDOTDIR:-$HOME/.config/zsh}
+
 # use antidote for plugin management
 # export ANTIDOTE_HOME=${XDG_CACHE_HOME:=~/.cache}/repos
 [[ -d $ANTIDOTE_HOME/mattmc3/antidote ]] ||
@@ -98,10 +101,3 @@ noexpand_aliases+=(
 # # uninstall by removing these lines
 # [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 
-# pnpm
-export PNPM_HOME="/home/isaac/.local/bin/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
