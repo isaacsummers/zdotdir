@@ -96,6 +96,14 @@ alias gflss='git-flow support start'
 alias gflsf='git-flow support finish'
 alias gflv='git-flow version'
 
+# git-fzf
+alias gfw='git-fzf worktree'
+alias gfs='git-fzf status'
+alias gfb='git-fzf branch'
+alias gfst='git-fzf stash'
+alias gfup='git-fzf upgrade'
+alias gfc='git-fzf checkout'
+
 # git crypt
 alias gcr='git-crypt'
 alias gcrl='git-crypt lock'

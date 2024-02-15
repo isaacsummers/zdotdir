@@ -43,7 +43,6 @@ fi
 } &!
 
 
-
 # vim: ft=zsh sw=2 ts=2 et
 # # >>> conda initialize >>>
 if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
@@ -51,16 +50,6 @@ if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
 fi
 # # <<< conda initialize <<<
 
-# pnpm
-# export PNPM_HOME="/home/isaac/.local/share/pnpm"
-# case ":$PATH:" in
-#   *":$PNPM_HOME:"*) ;;
-#   *) export PATH="$PNPM_HOME:$PATH" ;;
-# esac
-# pnpm end
-
-# nvm
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 if ! pgrep -x "gpg-agent" > /dev/null; then
   eval $(gpgconf --launch gpg-agent)
@@ -73,12 +62,16 @@ export GPG_TTY=$TTY
 
 eval $(thefuck --alias)
 
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 # done profiling
 [[ -z "$ZPROFRC" ]] || zprof
 
 # cleanup
 unset ZPROFRC zplugins
 true
+
 
 zstyle -d ':completion:*' format
 zstyle ':completion:*:descriptions' format '[%d]'
@@ -104,3 +97,11 @@ noexpand_aliases+=(
 # # tabtab source for pnpm package
 # # uninstall by removing these lines
 # [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
+
+# pnpm
+export PNPM_HOME="/home/isaac/.local/bin/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

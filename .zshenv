@@ -10,6 +10,7 @@ export ZDOTDIR=~/.config/zsh
 export XDG_CONFIG_HOME=~/.config
 export XDG_CACHE_HOME=~/.cache
 export XDG_DATA_HOME=~/.local/share
+export XDG_PACKAGE_HOME=~/.local/bin
 export XDG_STATE_HOME=~/.local/state
 export XDG_RUNTIME_DIR=~/.xdg
 export XDG_PROJECTS_DIR=~/Projects
@@ -29,10 +30,10 @@ export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 export C_INCLUDE_PATH="/opt/homebrew/opt/graphviz/include"
 
 # PNPM
-export PNPM_HOME="$XDG_DATA_HOME/pnpm"
+export PNPM_HOME="$XDG_PACKAGE_HOME/pnpm"
 
 # NVM
-export NVM_DIR="$XDG_DATA_HOME/nvm"
+export NVM_DIR="$XDG_PACKAGE_HOME/nvm"
 
 # Locale
 export LC_ALL=en_US.UTF-8
@@ -59,6 +60,10 @@ path=(
   $HOME/miniconda3/bin(N)
   $HOME/opt/anaconda3/bin(N)
 
+  # packages
+  $XDG_PACKAGE_HOME/*/{bin}(N)
+  $XDG_PACKAGE_HOME(N)
+
   # core
   $HOME/{,s}bin(N)
   $HOMEBREW_PREFIX/{,s}bin(N)
@@ -81,14 +86,8 @@ path=(
   # snowsql
   /Applications/SnowSQL.app/Contents/MacOS(N)
 
-  # pipx
-  $HOME/.local/bin(N)
-
   # rust
   $XDG_DATA_HOME/cargo/bin(N)
-
-  # pnpm
-  $XDG_DATA_HOME/pnpm
 
   # privado
   $HOME/.privado/bin(N)

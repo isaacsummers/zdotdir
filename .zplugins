@@ -55,13 +55,16 @@ nekofar/zsh-git-lfs
 ohmyzsh/ohmyzsh path:plugins/tmux
 ohmyzsh/ohmyzsh path:plugins/gitfast
 ohmyzsh/ohmyzsh path:plugins/git
+ohmyzsh/ohmyzsh path:plugins/nvm
 unixorn/git-extra-commands
 nix-community/nix-zsh-completions
+alexiszamanidis/zsh-git-fzf
 
 ## * ----------------------------- COMPLETIONS ---------------------------- * ##
 ## johan/zsh kind:fpath path:completion/unix/command
 $HOMEBREW_PREFIX/share/zsh/site-functions kind:fpath
 ohmyzsh/ohmyzsh kind:fpath path:plugins/git
+ohmyzsh/ohmyzsh kind:fpath path:plugins/nvm
 docker/cli kind:fpath path:contrib/completion/zsh kind:fpath
 esc/conda-zsh-completion kind:fpath
 bobthecow/git-flow-completion
