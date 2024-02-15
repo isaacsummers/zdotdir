@@ -15,6 +15,17 @@ export XDG_STATE_HOME=~/.local/state
 export XDG_RUNTIME_DIR=~/.xdg
 export XDG_PROJECTS_DIR=~/Projects
 
+# Add variables for key Zsh directories.
+export __zsh_config_dir=${ZDOTDIR:-${XDG_CONFIG_HOME:-$HOME/.config}/zsh}
+export __zsh_user_data_dir=${XDG_DATA_HOME:-$HOME/.local/share}/zsh
+export __zsh_cache_dir=${XDG_CACHE_HOME:-$HOME/.cache}/zsh
+
+# Ensure Zsh directories exist.
+for _zdir in __zsh_{config,user_data,cache}_dir; do
+  [[ -d "${(P)_zdir}" ]] || mkdir -p ${(P)_zdir}
+done
+unset _zdir
+
 # Custom
 export DOTFILES=$XDG_CONFIG_HOME/dotfiles
 export GNUPGHOME=$XDG_DATA_HOME/gnupg
@@ -132,4 +143,3 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 [[ -z "$READNULLCMD" ]] || READNULLCMD=$PAGER
 
 # vim: ft=zsh sw=2 ts=2 et
-
