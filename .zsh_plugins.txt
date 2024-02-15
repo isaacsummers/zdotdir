@@ -34,6 +34,11 @@ $ZSH_CUSTOM path:plugins/golang
 $ZSH_CUSTOM path:plugins/otp
 $ZSH_CUSTOM path:plugins/python
 
+# Custom 2
+wfxr/forgit
+nix-community/nix-zsh-completions
+ogham/exa kind:fpath
+
 # Utils
 romkatv/zsh-bench kind:path
 ohmyzsh/ohmyzsh path:plugins/extract
@@ -44,6 +49,8 @@ ohmyzsh/ohmyzsh path:plugins/fancy-ctrl-z
 
 # Completion
 mattmc3/zephyr path:plugins/completion
+aloxaf/fzf-tab
+freed-wu/fzf-tab-source
 
 # custom
 mattmc3/zsh_custom path:plugins/python
