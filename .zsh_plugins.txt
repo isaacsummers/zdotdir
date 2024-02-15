@@ -38,6 +38,10 @@ $ZSH_CUSTOM path:plugins/python
 wfxr/forgit
 nix-community/nix-zsh-completions
 ogham/exa kind:fpath
+hlissner/zsh-autopair
+fdellwing/zsh-bat
+ohmyzsh/ohmyzsh path:plugins/git
+ohmyzsh/ohmyzsh path:plugins/gitfast
 
 # Utils
 romkatv/zsh-bench kind:path
