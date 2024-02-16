@@ -35,13 +35,13 @@ $ZSH_CUSTOM path:plugins/otp
 $ZSH_CUSTOM path:plugins/python
 
 # Custom 2
-wfxr/forgit
 nix-community/nix-zsh-completions
 ogham/exa kind:fpath
 hlissner/zsh-autopair
 fdellwing/zsh-bat
 ohmyzsh/ohmyzsh path:plugins/git
 ohmyzsh/ohmyzsh path:plugins/gitfast
+wfxr/forgit
 
 # Utils
 romkatv/zsh-bench kind:path
