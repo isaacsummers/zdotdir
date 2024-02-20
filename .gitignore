@@ -23,3 +23,5 @@
 ~*
 .zephyr/
 .zlocal
+.env*
+**/.*.ini
