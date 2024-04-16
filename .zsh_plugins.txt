@@ -39,6 +39,7 @@ nix-community/nix-zsh-completions
 ogham/exa kind:fpath
 hlissner/zsh-autopair
 fdellwing/zsh-bat
+ohmyzsh/ohmyzsh path:lib
 ohmyzsh/ohmyzsh path:plugins/git
 ohmyzsh/ohmyzsh path:plugins/gitfast
 wfxr/forgit
