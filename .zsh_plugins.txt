@@ -42,6 +42,8 @@ fdellwing/zsh-bat
 ohmyzsh/ohmyzsh path:lib
 ohmyzsh/ohmyzsh path:plugins/git
 ohmyzsh/ohmyzsh path:plugins/gitfast
+# tj/git-extras
+# ohmyzsh/ohmyzsh path:plugins/git-extras
 wfxr/forgit
 
 # Utils
@@ -53,9 +55,9 @@ ohmyzsh/ohmyzsh path:plugins/magic-enter
 ohmyzsh/ohmyzsh path:plugins/fancy-ctrl-z
 
 # Completion
-mattmc3/zephyr path:plugins/completion
-aloxaf/fzf-tab
-freed-wu/fzf-tab-source
+mattmc3/zephyr path:plugins/completion kind:defer
+aloxaf/fzf-tab kind:defer
+freed-wu/fzf-tab-source kind:defer
 
 # custom
 mattmc3/zsh_custom path:plugins/python

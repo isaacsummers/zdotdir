@@ -68,6 +68,7 @@ eval $(thefuck --alias)
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+
 # done profiling
 [[ -z "$ZPROFRC" ]] || zprof
 
@@ -101,3 +102,5 @@ noexpand_aliases+=(
 # # uninstall by removing these lines
 # [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 
+
+source ./.evals.zsh

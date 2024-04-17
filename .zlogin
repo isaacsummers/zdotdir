@@ -1,0 +1,2 @@
+pwd
+source ./.evals.zsh
