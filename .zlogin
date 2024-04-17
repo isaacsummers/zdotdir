@@ -1,2 +1,1 @@
-pwd
-source ./.evals.zsh
+source $ZDOTDIR/.evals.zsh

@@ -103,4 +103,4 @@ noexpand_aliases+=(
 # [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 
 
-source ./.evals.zsh
+source $ZDOTDIR/.evals.zsh
