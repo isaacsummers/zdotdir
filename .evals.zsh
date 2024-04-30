@@ -16,7 +16,7 @@ for index in "${evals[@]}"; do
   if [[ $- == *i* ]]; then # check if the shell is interactive
     eval_command="eval \"\$($cmd)\""
     eval "$eval_command" >/dev/null 2>&1 || echo "Failed to execute: $eval_command"
-    # printf "Loaded %s completion --- '%s'\n" "$name" "$eval_command"
+    printf "Loaded %s completion --- '%s'\n" "$name" "$eval_command"
   # else
     # echo "Shell is not interactive"
   fi

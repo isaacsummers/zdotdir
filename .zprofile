@@ -46,6 +46,9 @@ export PNPM_HOME="$XDG_PACKAGE_HOME/pnpm"
 # NVM
 export NVM_DIR="$XDG_PACKAGE_HOME/nvm"
 
+# FZF DBT
+# export FZF_DBT_PREVIEW_CMD="bat {}"
+
 # Locale
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -93,7 +96,7 @@ path=(
   /{usr/local,opt/homebrew}/opt/ruby/bin(N)
   /{usr/local,opt/homebrew}/lib/ruby/gems/*/bin(N)
   $HOME/.gem/ruby/*/bin(N)
-  
+
   # snowsql
   /Applications/SnowSQL.app/Contents/MacOS(N)
 

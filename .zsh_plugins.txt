@@ -45,6 +45,7 @@ ohmyzsh/ohmyzsh path:plugins/gitfast
 # tj/git-extras
 # ohmyzsh/ohmyzsh path:plugins/git-extras
 wfxr/forgit
+infused-insight/fzf-dbt path:src
 
 # Utils
 romkatv/zsh-bench kind:path
