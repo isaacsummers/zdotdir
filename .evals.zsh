@@ -1,5 +1,6 @@
 typeset evals
 evals=(
+  "pyenv:pyenv init --path"
   "pyenv:pyenv init -"
   "pyenv-virtualenv:pyenv virtualenv-init -"
   "pip:pip completion --zsh"

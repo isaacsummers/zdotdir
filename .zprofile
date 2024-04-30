@@ -70,6 +70,9 @@ path=(
   # pyenv
   $PYENV_ROOT/bin(N)
 
+  # pipenv
+  $PIPENV_PYTHON=$PYENV_ROOT/shims/python
+
   # conda
   $HOME/miniconda3/bin(N)
   $HOME/opt/anaconda3/bin(N)
