@@ -45,14 +45,15 @@ zstyle ':zsh_custom:plugin:abbreviations' noexpand $noexpand
 
 # vim: ft=zsh sw=2 ts=2 et
 
-zstyle ':completion:*' menu select
-zmodload zsh/complist
+# zstyle ':completion:*' menu no
+# zstyle ':completion:*' menu select
+# zmodload zsh/complist
 
-# use the vi navigation keys in menu completion
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
+# # use the vi navigation keys in menu completion
+# bindkey -M menuselect 'h' vi-backward-char
+# bindkey -M menuselect 'k' vi-up-line-or-history
+# bindkey -M menuselect 'l' vi-forward-char
+# bindkey -M menuselect 'j' vi-down-line-or-history
 
 #
 # docker
@@ -73,9 +74,8 @@ zstyle ':fzf-tab:complete:*:*' fzf-preview 'less ${(Q)realpath}'
 zstyle ':completion:*:git-checkout:*' sort false
 zstyle ':fzf-tab:*' print-query alt-enter
 zstyle ':fzf-tab:*' single-group color header
+# zstyle ':completion:*:descriptions' format '[%d]'
 
-# zstyle ':fzf-tab:complete:(\\|)run-help:*' fzf-preview 'run-help $word'
-# zstyle ':fzf-tab:complete:(\\|*/|)man:*' fzf-preview 'man $word'
 #
 # Misc
 #

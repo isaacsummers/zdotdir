@@ -136,14 +136,18 @@ export SHELL_SESSIONS_DISABLE=1 # Make Apple Terminal behave.
 # fi
 export GPG_TTY=$TTY
 
-export LESSOPEN="|/home/linuxbrew/.linuxbrew/bin/lesspipe.sh %s"
-# export LESSOPEN='|$ZDOTDIR/conf.d/.lessfilter %s'
+# export LESSOPEN="|/home/linuxbrew/.linuxbrew/bin/lesspipe.sh %s"
+export LESSOPEN='|$ZDOTDIR/conf.d/.lessfilter %s'
 export LESS="-R"
 # export ZSH_TMUX_AUTOSTART=true
 export ZSH_TMUX_AUTOSTART_ONCE=true
 export ZSH_TMUX_CONFIG="${TMUX_CONFIG:-$XDG_CONFIG_HOME/tmux/tmux.conf}"
 # export FORGIT_GLO_FORMAT='%C(auto)%h%d %s %C(black)%C(bold)%cr%reset'
 
+export ZSH_AUTOSUGGEST_STRATEGY=(
+    completion
+    history
+)
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 

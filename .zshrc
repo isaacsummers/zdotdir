@@ -52,7 +52,6 @@ eval $(thefuck --alias)
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
-
 zstyle -d ':completion:*' format
 zstyle ':completion:*:descriptions' format '[%d]'
 

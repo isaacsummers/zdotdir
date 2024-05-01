@@ -65,7 +65,7 @@ mattmc3/zsh_custom path:plugins/python
 
 # regular plugins
 mattmc3/zman
-ajeetdsouza/zoxide
+ajeetdsouza/zoxide kind:defer
 zdharma-continuum/fast-syntax-highlighting kind:defer
 zsh-users/zsh-autosuggestions kind:defer
 zsh-users/zsh-history-substring-search

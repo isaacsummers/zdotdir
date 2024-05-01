@@ -8,6 +8,7 @@ evals=(
   "pipenv:_PIPENV_COMPLETE=zsh_source pipenv"
   "navi:navi widget zsh"
   "fzf:fzf --zsh"
+  "zoxide:zoxide init zsh --cmd cd"
 )
 
 for index in "${evals[@]}"; do
