@@ -1,0 +1,2 @@
+strace -e trace=file zsh -c "source ${ZDOTDIR:-$HOME}/.zprofile"
+strace -e trace=file zsh -c "source ${ZDOTDIR:-$HOME}/.zshrc"

@@ -139,8 +139,8 @@ alias ptrisl='ptrln && ptris'
 alias ptrislf='ptrisl && ptrf'
 
 # zsh
-alias zreload='exec zsh'
-alias zrr='exec zsh'
+alias zreload='exec zsh -l'
+alias zrr='exec zsh -l'
 alias arr='. $ZDOTDIR/conf.d/aliases.personal.zsh'
 alias zcompdir='zcompiledir'
 alias zcheat='code $ZDOTDIR/.docs/zsh-cheatsheet.md'

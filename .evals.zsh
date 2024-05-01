@@ -7,6 +7,7 @@ evals=(
   "pipx:register-python-argcomplete pipx"
   "pipenv:_PIPENV_COMPLETE=zsh_source pipenv"
   "navi:navi widget zsh"
+  "fzf:fzf --zsh"
 )
 
 for index in "${evals[@]}"; do
@@ -17,8 +18,8 @@ for index in "${evals[@]}"; do
   if [[ $- == *i* ]]; then # check if the shell is interactive
     eval_command="eval \"\$($cmd)\""
     eval "$eval_command" >/dev/null 2>&1 || echo "Failed to execute: $eval_command"
-    printf "Loaded %s completion --- '%s'\n" "$name" "$eval_command"
-  # else
-    # echo "Shell is not interactive"
+    if [[ $ZSH_DEBUG == 1 ]]; then
+      printf "Loaded %s completion --- '%s'\n" "$name" "$eval_command"
+    fi
   fi
 done

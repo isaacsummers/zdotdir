@@ -109,6 +109,7 @@ path=(
   # privado
   $HOME/.privado/bin(N)
 
+
   # path
   $path
 )
@@ -135,7 +136,8 @@ export SHELL_SESSIONS_DISABLE=1 # Make Apple Terminal behave.
 # fi
 export GPG_TTY=$TTY
 
-export LESSOPEN='|$ZDOTDIR/conf.d/.lessfilter %s'
+export LESSOPEN="|/home/linuxbrew/.linuxbrew/bin/lesspipe.sh %s"
+# export LESSOPEN='|$ZDOTDIR/conf.d/.lessfilter %s'
 export LESS="-R"
 # export ZSH_TMUX_AUTOSTART=true
 export ZSH_TMUX_AUTOSTART_ONCE=true

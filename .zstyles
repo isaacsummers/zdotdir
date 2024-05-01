@@ -25,10 +25,34 @@ noexpand=(
   gpg
   vi
   z
+  rm
+  del
+  safe-rm
+  l
+  ll
+  la
+  lsa
+  ldot
+  cat
+  brew
+  z
+  take
+  tmux
+  arr
+  bat
 )
 zstyle ':zsh_custom:plugin:abbreviations' noexpand $noexpand
 
 # vim: ft=zsh sw=2 ts=2 et
+
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+
+# use the vi navigation keys in menu completion
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
 
 #
 # docker

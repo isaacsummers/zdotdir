@@ -1,1 +1,0 @@
-source $ZDOTDIR/.evals.zsh
