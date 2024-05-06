@@ -149,6 +149,7 @@ export ZSH_AUTOSUGGEST_STRATEGY=(
     history
 )
 
+export PIPENV_VENV_IN_PROJECT=1
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 # Use `< file` to quickly view the contents of any file.

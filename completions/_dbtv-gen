@@ -1,0 +1,7 @@
+#compdef dbtv-gen
+
+_dbtv_gen_completion() {
+  eval $(env _TYPER_COMPLETE_ARGS="${words[1,$CURRENT]}" _DBTV_GEN_COMPLETE=complete_zsh dbtv-gen)
+}
+
+compdef _dbtv_gen_completion dbtv-gen

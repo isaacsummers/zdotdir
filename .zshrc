@@ -67,3 +67,7 @@ true
 
 # done profiling
 [[ -z "$ZPROFRC" ]] || zprof
+
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc

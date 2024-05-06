@@ -1,6 +1,6 @@
 typeset evals
 evals=(
-  "pyenv:pyenv init --path"
+  # "pyenv:pyenv init --path"
   "pyenv:pyenv init -"
   "pyenv-virtualenv:pyenv virtualenv-init -"
   "pip:pip completion --zsh"
@@ -19,8 +19,5 @@ for index in "${evals[@]}"; do
   if [[ $- == *i* ]]; then # check if the shell is interactive
     eval_command="eval \"\$($cmd)\""
     eval "$eval_command" >/dev/null 2>&1 || echo "Failed to execute: $eval_command"
-    if [[ $ZSH_DEBUG == 1 ]]; then
-      printf "Loaded %s completion --- '%s'\n" "$name" "$eval_command"
-    fi
   fi
 done
