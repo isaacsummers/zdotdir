@@ -52,6 +52,7 @@ alias wpyy='pyenv which python3'
 
 # pip
 alias pipunall='pip uninstall -yr <(pip freeze)'
+alias pipunall="pip list --format=freeze | grep -v '^\(pip\|setuptools\|wheel\)' | xargs -r pip uninstall -y"
 
 # git
 alias gmv='git mv'
