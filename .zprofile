@@ -33,7 +33,8 @@ export REPO_HOME=${${ZDOTDIR:+$ZDOTDIR/.cache}:-${XDG_CACHE_HOME:=~/.cache}}/rep
 export ANTIDOTE_HOME=$REPO_HOME
 
 # Pyenv
-export PYENV_ROOT=${HOME/.pyenv:HOME/.pyenv-win}
+export PYENV_ROOT="${HOME}/.pyenv"
+export PYENV_ROOT="${PYENV_ROOT:-${HOME}/.pyenv-win}"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
 # Graphviz pkgconfigpath
