@@ -25,3 +25,5 @@
 .zlocal
 .env*
 **/.*.ini
+.zshenv.zshlink
+zsh.code-workspace
