@@ -27,3 +27,4 @@
 **/.*.ini
 .zshenv.*link
 zsh.code-workspace
+.vscode*
