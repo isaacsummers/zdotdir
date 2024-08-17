@@ -1,0 +1,39 @@
+#!/bin/zsh
+##? Add an alias to aliases
+
+if [ $# -lt 2 ]; then
+    echo "Usage: aliasadd <alias_name> <command>"
+    return 1
+fi
+
+if [ ! -f $ZDOTDIR/conf.d/aliases.personal.zsh ]; then
+  echo "Error: Alias file $ZDOTDIR/conf.d/aliases.personal.zsh does not exist" >&2
+  return 1
+fi
+
+if [ ! -w $ZDOTDIR/conf.d/aliases.personal.zsh ]; then
+  echo "Error: Alias file $ZDOTDIR/conf.d/aliases.personal.zsh is not writable" >&2
+  return 1 
+fi
+
+# Store the alias name
+alias_name="$1"
+
+# Combine all arguments after the first one into the alias command
+shift
+command="$*"
+
+escaped_command=$(cat <<EOF
+'$command'
+EOF
+)
+
+if grep -q "^alias $alias_name=" $ZDOTDIR/conf.d/aliases.personal.zsh; then
+  echo "Error: Alias $alias_name already exists" >&2
+  return 1
+fi 
+
+if echo "alias $alias_name=$escaped_command" >> $ZDOTDIR/conf.d/aliases.personal.zsh; then
+  . $ZDOTDIR/conf.d/aliases.personal.zsh
+  echo "Alias $alias_name added for '$command'"
+fi

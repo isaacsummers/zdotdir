@@ -24,3 +24,8 @@
 .zephyr/
 .zlocal
 .kickstart/
+.env*
+**/.*.ini
+.zshenv.*link
+zsh.code-workspace
+.vscode*
