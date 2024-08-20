@@ -36,6 +36,8 @@ export STARSHIP_CONFIG=$ZDOTDIR/themes/starship.toml
 export HOMEBREW_PREFIX=${HOMEBREW_PREFIX:-/home/linuxbrew/.linuxbrew}
 export PYENV_ROOT=${PYENV_ROOT:-$HOME/.pyenv}
 
+export ZSH_TMUX_AUTOSTART=true
+
 export NVM_DIR=${NVM_DIR:-${XDG_CONFIG_DIR:-$HOME/.config}/nvm}
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
