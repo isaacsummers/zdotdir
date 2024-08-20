@@ -30,4 +30,4 @@ zstyle ':fzf-tab:*' switch-group '<' '>'
 # zstyle ':fzf-tab:*' show-group brief
 
 
-zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+# zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
