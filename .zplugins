@@ -131,6 +131,7 @@ romkatv/powerlevel10k kind:fpath
 ###
 romkatv/zsh-bench kind:path
 z-shell/zsh-eza
+fdellwing/zsh-bat
 
 
 ### Frameworks
