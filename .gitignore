@@ -12,3 +12,6 @@
 *.zwc
 *.zwc.old
 ~*
+# .vscode/
+.cache/
+.zplugins.zsh

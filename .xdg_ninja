@@ -1,0 +1,360 @@
+The $XDG_DATA_HOME environment variable is not set, make sure to add it to your shell's configuration before setting any of the other environment variables!
+    ? The recommended value is: $HOME/.local/share
+
+The $XDG_STATE_HOME environment variable is not set, make sure to add it to your shell's configuration before setting any of the other environment variables!
+    ? The recommended value is: $HOME/.local/state
+
+The $XDG_CACHE_HOME environment variable is not set, make sure to add it to your shell's configuration before setting any of the other environment variables!
+    ? The recommended value is: $HOME/.cache
+
+Starting to check your $HOME.
+
+[aws-cli]: /home/isaac/.aws
+
+  Export the following environment variables:
+
+    export AWS_SHARED_CREDENTIALS_FILE="$XDG_CONFIG_HOME"/aws/credentials
+    export AWS_CONFIG_FILE="$XDG_CONFIG_HOME"/aws/config
+
+[azure-cli]: /home/isaac/.azure
+
+  Export the following environment variables:
+
+    export AZURE_CONFIG_DIR="$XDG_DATA_HOME"/azure
+
+[bash]: /home/isaac/.bash_history
+
+  Export the following environment variables:
+
+    export HISTFILE="${XDG_STATE_HOME}"/bash/history
+
+[conda]: /home/isaac/.condarc
+
+  Move the file to "XDG_CONFIG_HOME"/conda/.condarc.
+
+  See conda documentation for details: https://conda.io/projects/conda/en/latest/user-guide/configuration/use-
+  condarc.html#searching-for-condarc
+
+[conda]: /home/isaac/.conda/environments.txt
+
+  environments.txt unsupported.
+
+  Relevant issue: https://github.com/b3nj5m1n/xdg-ninja/issues/14
+
+[cuda]: /home/isaac/.nv
+
+  Export the following environment variables:
+
+    export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
+
+[docker]: /home/isaac/.docker
+
+  Export the following environment variables:
+
+    export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
+
+[dotnet]: /home/isaac/.dotnet
+
+  Export the following environment variables:
+
+    export DOTNET_CLI_HOME="$XDG_DATA_HOME"/dotnet
+
+[git]: /home/isaac/.gitconfig
+
+  XDG is supported out-of-the-box, so we can simply move the file to $XDG_CONFIG_HOME/git/config.
+
+[gitmoji-cli]: /home/isaac/.gitmoji/gitmojis.json
+
+  Currently unsupported
+
+  Relevant issue: https://github.com/carloscuesta/gitmoji-cli/issues/893
+
+[gnupg]: /home/isaac/.gnupg
+
+  Export the following environment variables:
+
+    export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+
+  Note: from the archwiki:
+
+  ? If you use non-default GnuPG Home directory, you will need to edit all socket files to use the values of gpgconf --
+  ? list-dirs.
+  ? If you set your SSH_AUTH_SOCK manually, keep in mind that your socket location may be different if you are using a
+  ? custom GNUPGHOME
+
+[ipython]: /home/isaac/.ipython
+
+  Supported since 8.0.0.
+
+  You can move the file to $XDG_CONFIG_HOME/ipython.
+
+  Or set the following environment variable:
+
+    export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
+
+[keychain]: /home/isaac/.keychain
+
+  Alias keychain to use a custom runtime dir location:
+
+    keychain --dir "$XDG_RUNTIME_DIR"/keychain --absolute
+
+[less]: /home/isaac/.lesshst
+
+  Export the following environment variables:
+
+    export LESSHISTFILE="$XDG_STATE_HOME"/less/history
+
+[minikube]: /home/isaac/.minikube
+
+  Export the following environment variables:
+
+    export MINIKUBE_HOME="$XDG_DATA_HOME"/minikube
+
+[nix]: /home/isaac/.nix-channels
+
+  New nix command line interface supports XDG Base Directory but Old Commands will still create these directories.
+
+  To use the XDG spec with the old command line, add to  /etc/nix/nix.conf :
+
+   use-xdg-base-directories = true
+
+  You also have to manually move the the file to XDG_STATE_HOME:
+
+   mv "$HOME/.nix-channels" "$XDG_STATE_HOME/nix/channels"
+
+  See the Manual: https://nixos.org/manual/nix/stable/command-ref/conf-file#conf-use-xdg-base-directories
+
+[nix]: /home/isaac/.nix-defexpr
+
+  New nix command line interface supports XDG Base Directory but Old Commands will still create these directories.
+
+  To use the XDG spec with the old command line, add to  /etc/nix/nix.conf :
+
+   use-xdg-base-directories = true
+
+  You also have to manually move the the file to XDG_STATE_HOME:
+
+   mv "$HOME/.nix-defexpr" "$XDG_STATE_HOME/nix/defexpr"
+
+  See the Manual: https://nixos.org/manual/nix/stable/command-ref/conf-file#conf-use-xdg-base-directories
+
+[nix]: /home/isaac/.nix-profile
+
+  New nix command line interface supports XDG Base Directory but Old Commands will still create these directories.
+
+  To use the XDG spec with the old command line, add to  /etc/nix/nix.conf :
+
+   use-xdg-base-directories = true
+
+  You also have to manually move the the file to XDG_STATE_HOME:
+
+   mv "$HOME/.nix-profile" "$XDG_STATE_HOME/nix/profile"
+
+  See the Manual: https://nixos.org/manual/nix/stable/command-ref/conf-file#conf-use-xdg-base-directories
+
+[npm]: /home/isaac/.npm
+
+  You need to put the following into your npmrc:
+
+    prefix=${XDG_DATA_HOME}/npm
+    cache=${XDG_CACHE_HOME}/npm
+    init-module=${XDG_CONFIG_HOME}/npm/config/npm-init.js
+    tmp=${XDG_RUNTIME_DIR}/npm
+
+  Note: the tmp option has been removed in more recent versions of npm, including it will generate a warning.
+
+[openssh]: /home/isaac/.ssh
+
+  Assumed to be present by many ssh daemons and clients such as DropBear and OpenSSH.
+
+[pyenv]: /home/isaac/.pyenv
+
+  Export the following environment variables:
+
+    export PYENV_ROOT="$XDG_DATA_HOME"/pyenv
+
+[python]: /home/isaac/.python_history
+
+  Export the following environment variables:
+
+    export PYTHONSTARTUP="$HOME"/python/pythonrc
+
+  Now create the file ~/python/pythonrc, and put the following code into it:
+
+    def is_vanilla() -> bool:
+        import sys
+        return not hasattr(__builtins__, '__IPYTHON__') and 'bpython' not in sys.argv[0]
+
+
+    def setup_history():
+        import os
+        import atexit
+        import readline
+        from pathlib import Path
+
+        if state_home := os.environ.get('XDG_STATE_HOME'):
+            state_home = Path(state_home)
+        else:
+            state_home = Path.home() / '.local' / 'state'
+
+        history: Path = state_home / 'python_history'
+
+        readline.read_history_file(str(history))
+        atexit.register(readline.write_history_file, str(history))
+
+
+    if is_vanilla():
+        setup_history()
+
+  Finally, create an empty file at $XDG_STATE_HOME/python_history
+
+  Note: This won't work if python is invoked with -i flag.
+
+  Credit: https://github.com/b3nj5m1n/xdg-ninja/issues/289#issuecomment-1666024202
+
+[redis]: /home/isaac/.rediscli_history
+
+  Export the following environment variables:
+
+    export REDISCLI_HISTFILE="$XDG_DATA_HOME"/redis/rediscli_history
+
+[rustup]: /home/isaac/.rustup
+
+  Export the following environment variables:
+
+    export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+
+[sudo]: /home/isaac/.sudo_as_admin_successful
+
+  This file is only generated by versions >=1.9.6 if they were built with --enable-admin-flag.
+
+  However, these versions also support disabling the creation of this file via the admin_flag sudoers option,
+  regardless of build configuration.
+  To do this, add the following directive to /etc/sudoers or (preferably) to a file under /etc/sudoers.d:
+
+    Defaults !admin_flag
+
+  Note that bash may be configured to always print out a "hint" on interactive sessions if neither
+  "$HOME"/.sudo_as_admin_successful nor "$HOME"/.hushlogin exist.
+
+  To prevent this, comment out or delete the corresponding if statement in /etc/bashrc.bashrc.
+
+[tldr]: /home/isaac/.tldrc
+
+  Tldr has multiple official clients, so the instructions depend on your installation method.
+
+  If you're using the C client, export the following environment variable:
+
+    export TLDR_CACHE_DIR="$XDG_CACHE_HOME"/tldr
+
+  The Python client and tlrc (Rust client) use the correct XDG directory out of the box.
+
+  There is currently no way to use an XDG directory in the Node.js client.
+
+[vim]: /home/isaac/.viminfo
+
+  See help for .vimrc
+
+[vim]: /home/isaac/.vim
+
+  See help for .vimrc
+
+[visual studio code]: /home/isaac/.vscode-insiders
+
+  Currently unsupported.
+
+  Relevant issue: https://github.com/microsoft/vscode/issues/3884
+
+[visual studio code]: /home/isaac/.vscode-server
+
+  Currently only partially supported.
+
+  Each of vscode's remote development extensions will create and use a  vscode-server  directory in a user's home
+  folder each time a host is connected to.
+
+  Unfortunately, the SSH extension is the only extension that has a setting that can change the location of  vscode-
+  server . Both the container extension and the WSL extension are missing the option of changing their  vscode-server
+  directories.
+
+  Even so, the SSH extension only allows you to define paths for individual hosts. It doesn't allow for a default path
+  for all ssh connections.
+
+  To edit the host paths, you either need to change your remote SSH settings in the vscode application itself, or edit
+  your vscode user settings json file.
+
+  Any changes you make need to be made on the machine you use to connect to a host, not the remote host itself.
+
+  Method 1: using the vscode application
+
+  Open vscode and open your settings menu by pressing  Ctrl+, .
+
+  In the search bar, type  Server Install Path  or  remote.SSH.serverInstallPath .
+
+  A setting called  Remote.SSH: Server Install Path  should appear with a map of items and values underneath its
+  description.
+
+  With the hostname as the item and the value as  $HOME/.local/share/vscode-server , enter each SSH remote you want to
+  have changed.
+
+  Ex.
+
+      ITEM    ?              VALUE
+  ????????????????????????????????????????????????
+    hostname  ? $HOME/.local/share/vscode-server
+    hostname2 ? $HOME/.local/share/vscode-server
+
+  Method 2: editing the user settings file (settings.json)
+
+  Find and open your vscode user settings file. Depending on your platform, your user settings file can be in one of
+  three different places:
+
+  • Windows -  %APPDATA%\\Code\\User\\settings.json
+  • macOS -  $HOME/Library/Application\\ Support/Code/User/settings.json
+  • Linux -  $HOME/.config/Code/User/settings.json
+
+  Same to the application method, you need to define each individual host with its directory path in your settings
+  file.
+
+  To add your hosts, add a map to the file with the title as  remote.SSH.serverInstallPath , your hostnames as the
+  items, and  $HOME/.local/share/vscode-server  as the values.
+
+  Ex.
+
+    "remote.SSH.serverInstallPath": {
+        "hostname": "$HOME/.local/share/vscode-server",
+        "hostname2": "$HOME/.local/share/vscode-server"
+    }
+
+  Relevant issue: https://github.com/microsoft/vscode-remote-release/issues/6837
+
+[wget]: /home/isaac/.wget-hsts
+
+  Alias wget to use a custom hsts cache file location:
+
+    alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
+
+[z]: /home/isaac/.z
+
+  Export the following environment variables:
+
+    export _Z_DATA="$XDG_DATA_HOME/z"
+
+[zsh]: /home/isaac/.zshenv
+
+  Move the file to "$HOME"/.config/zsh/.zshenv and export the following environment variable:
+
+    export ZDOTDIR="$HOME"/.config/zsh
+
+  You can do this in /etc/zshenv (Or /etc/zsh/zshenv, on some distros).
+
+[zsh]: /home/isaac/.zshrc
+
+  Move the file to "$HOME"/.config/zsh/.zshrc and export the following environment variable:
+
+    export ZDOTDIR="$HOME"/.config/zsh
+
+  You can do this in /etc/zshenv (Or /etc/zsh/zshenv, on some distros).
+
+Done checking your $HOME.
+
+If you have files in your $HOME that shouldn't be there, but weren't recognised by xdg-ninja, please consider creating a configuration file for it and opening a pull request on github.

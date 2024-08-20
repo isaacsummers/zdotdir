@@ -1,4 +1,3 @@
-#!/bin/zsh
 #
 # .aliases - Set whatever shell aliases you want.
 #
@@ -9,7 +8,8 @@ alias l=ls
 alias g=git
 
 # mask built-ins with better defaults
-alias vi=vim
+alias vim=nvim
+alias vi=nvim
 
 # more ways to ls
 alias ll='ls -lh'
@@ -39,3 +39,25 @@ alias please=sudo
 alias zshrc='${EDITOR:-vim} "${ZDOTDIR:-$HOME}"/.zshrc'
 alias zbench='for i in {1..10}; do /usr/bin/time zsh -lic exit; done'
 alias zdot='cd ${ZDOTDIR:-~}'
+alias ag='alias | grep'
+
+# shell
+alias zrr='exec zsh -l'
+alias takeover="tmux detach -a"
+
+# pyenv
+alias pye='pyenv'
+alias pyl='pyenv local'
+alias pylu='pyenv local --unset'
+alias pyg='pyenv global'
+alias pygu='pyenv global --unset'
+alias pys='pyenv shell'
+alias pysu='pyenv shell --unset'
+alias pyv='pyenv virtualenv'
+alias pyvs='pyenv virtualenvs'
+alias pyvd='pyenv virtualenv-delete'
+alias pyvi='pyenv virtualenv-init'
+alias pyvp='pyenv virtualenv-prefix'
+alias wpyy='pyenv which python3'
+
+
