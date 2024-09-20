@@ -38,3 +38,4 @@ autoload -Uz $fpath[1]/*(.:t)
 # Zsh config.
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load
+

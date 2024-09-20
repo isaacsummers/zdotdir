@@ -130,7 +130,6 @@ romkatv/powerlevel10k kind:fpath
 #
 ###
 romkatv/zsh-bench kind:path
-z-shell/zsh-eza
 fdellwing/zsh-bat
 
 
@@ -235,6 +234,7 @@ belak/zsh-utils path:editor
 #
 ###
 
+z-shell/zsh-eza kind:defer
 # Syntax highlighting
 #zsh-users/zsh-syntax-highlighting kind:defer
 zdharma-continuum/fast-syntax-highlighting kind:defer

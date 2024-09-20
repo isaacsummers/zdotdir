@@ -10,6 +10,7 @@ alias g=git
 # mask built-ins with better defaults
 alias vim=nvim
 alias vi=nvim
+alias codei=code-insiders
 
 # more ways to ls
 # alias ll='ls -lh'
