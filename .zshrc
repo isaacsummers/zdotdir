@@ -39,3 +39,5 @@ autoload -Uz $fpath[1]/*(.:t)
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load
 
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"

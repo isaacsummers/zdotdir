@@ -76,6 +76,7 @@ agkozak/zsh-z
 ###
 $ZDOTDIR/.zaliases
 $ZDOTDIR/plugins/xdg
+$ZDOTDIR/plugins/thefuck
 $ZDOTDIR/plugins/pyenv kind:defer
 
 ### Local Plugins with Variables
@@ -168,6 +169,8 @@ ohmyzsh/ohmyzsh path:plugins/extract
 ohmyzsh/ohmyzsh path:plugins/magic-enter
 ohmyzsh/ohmyzsh path:plugins/fancy-ctrl-z
 ohmyzsh/ohmyzsh path:plugins/tmux
+ohmyzsh/ohmyzsh path:plugins/git
+ohmyzsh/ohmyzsh path:plugins/gitfast
 
 
 ### Framework: Prezto
@@ -238,6 +241,7 @@ z-shell/zsh-eza kind:defer
 # Syntax highlighting
 #zsh-users/zsh-syntax-highlighting kind:defer
 zdharma-continuum/fast-syntax-highlighting kind:defer
+MichaelAquilina/zsh-you-should-use kind:defer
 
 ### Final Plugins
 #

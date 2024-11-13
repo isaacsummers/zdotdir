@@ -35,6 +35,7 @@ export STARSHIP_CONFIG=$ZDOTDIR/themes/starship.toml
 
 export HOMEBREW_PREFIX=${HOMEBREW_PREFIX:-/home/linuxbrew/.linuxbrew}
 export PYENV_ROOT=${PYENV_ROOT:-$HOME/.pyenv}
+# export PIPENV_VENV_IN_PROJECT=1
 
 # export ZSH_TMUX_AUTOSTART=true
 # export ZSH_TMUX_AUTOSTART_ONCE=false
@@ -53,3 +54,5 @@ path=(
   /usr/local/{,s}bin(N)
   $path
 )
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
