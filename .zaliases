@@ -35,17 +35,11 @@ alias urldecode='python3 -c "import sys, urllib.parse as ul; \
 alias urlencode='python3 -c "import sys, urllib.parse as ul; \
     print (ul.quote_plus(sys.argv[1]))"'
 
-# misc
-alias please=sudo
-alias zshrc='${EDITOR:-vim} "${ZDOTDIR:-$HOME}"/.zshrc'
-alias zbench='for i in {1..10}; do /usr/bin/time zsh -lic exit; done'
-alias zdot='cd ${ZDOTDIR:-~}'
-alias ag='alias | grep'
-alias cls='clear'
-
 # shell
 alias zrr='exec zsh -l'
 alias takeover="tmux detach -a"
+alias ssenv='set -a; source .env; set +a'
+alias shlev='echo 1'
 
 # pyenv
 alias pye='pyenv'
@@ -61,6 +55,32 @@ alias pyvd='pyenv virtualenv-delete'
 alias pyvi='pyenv virtualenv-init'
 alias pyvp='pyenv virtualenv-prefix'
 alias wpyy='pyenv which python3'
+
+# dbt
+alias dbtl='dbt ls'
+alias dbtls='dbt ls -s'
+alias dbtlss='dbt ls --selector'
+alias dbtr='dbt run'
+alias dbtrs='dbt run -s'
+alias dbtrss='dbt run --selector'
+alias dbtrf='dbt run --full-refresh'
+alias dbtrfs='dbt run --full-refresh -s'
+alias dbtrfss='dbt run --full-refresh --selector'
+alias dbtb='dbt build'
+alias dbtbs='dbt build -s'
+alias dbtbss='dbt build --selector'
+alias dbtbf='dbt build --full-refresh'
+alias dbtbfs='dbt build --full-refresh -s'
+alias dbtbfss='dbt build --full-refresh --selector'
+alias dbtc='dbt compile'
+alias dbtcs='dbt compile -s'
+alias dbtcss='dbt compile --selector'
+
+# misc
 alias ptr='poetry'
-alias ssenv='set -a; source .env; set +a'
-alias shlev='echo 1'
+alias please=sudo
+alias zshrc='${EDITOR:-vim} "${ZDOTDIR:-$HOME}"/.zshrc'
+alias zbench='for i in {1..10}; do /usr/bin/time zsh -lic exit; done'
+alias zdot='cd ${ZDOTDIR:-~}'
+alias ag='alias | grep'
+alias cls='clear'
