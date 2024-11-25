@@ -2,20 +2,16 @@
 # zephyr.toml - Zephyr default prompt theme
 #
 
-add_newline = true
-command_timeout = 1000
-scan_timeout = 500
+add_newline = false
 
 # A minimal left prompt
-# format = """$python$directory$character"""
-format = """($python$nodejs$git_branch$conda${custom.git_status_dirty}$git_status\n)$directory$character"""
+format = """$python$directory$character"""
 
 # move the rest of the prompt to the right
 #right_format = """$status$git_branch${custom.git_status_dirty}$git_status"""
-# right_format = """$status$cmd_duration$git_branch${custom.git_status_dirty}$git_status"""
-right_format = """$status$cmd_duration"""
+right_format = """$status$cmd_duration$git_branch${custom.git_status_dirty}$git_status"""
 
-palette="tokyo_night_256"
+palette="wombat"
 
 # Define custom colors
 [palettes.tokyo_night]
@@ -64,10 +60,8 @@ error_symbol = "[❯](yellow)[❯](red)"
 vicmd_symbol = "[❮](purple)[❮](cyan)"
 
 [python]
-format = '[(\(($virtualenv|)${version}\) )]($style)'
-# pyenv_version_name = true
+format = '[(\($virtualenv\) )]($style)'
 style = 'white'
-version_format = 'v${raw}'
 
 [directory]
 style = "blue"
@@ -77,9 +71,7 @@ fish_style_pwd_dir_length = 1
 
 # right prompt uses left space padding
 [git_branch]
-# format = ' [$branch]($style)'
-format = '([$branch]($style) )([$remote_name/](red)[$remote_branch](blue) )( [\[$ahead_behind$stashed\]]($style))'
-always_show_remote = true
+format = ' [$branch]($style)'
 style = 'green'
 
 [git_status]
@@ -92,9 +84,8 @@ behind = "⇣${count}"
 [custom.git_status_dirty]
 when = 'test -n "$(git status --porcelain 2>/dev/null)"'
 symbol = "•"
-style = "red"
+style = "white"
 format="[$symbol]($style)"
-ignore_timeout=true
 shell = ["sh"]
 
 [cmd_duration]
