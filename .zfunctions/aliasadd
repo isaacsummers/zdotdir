@@ -37,6 +37,10 @@ if grep -q "^alias $alias_name=" "$alias_file"; then
 fi
 
 if echo "alias $alias_name=$escaped_command" >> "$alias_file"; then
+  # Reload the aliases file to make the new alias available
   source "$alias_file"
   echo "Alias $alias_name added for '$command'"
+else
+  echo "Error: Failed to add alias $alias_name to $alias_file" >&2
+  return 1
 fi
