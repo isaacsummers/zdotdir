@@ -74,7 +74,7 @@ agkozak/zsh-z
 # host your own custom plugins.
 #
 ###
-$ZDOTDIR/.zaliases
+# $ZDOTDIR/.zaliases
 $ZDOTDIR/plugins/xdg
 $ZDOTDIR/plugins/thefuck
 $ZDOTDIR/plugins/pyenv kind:defer

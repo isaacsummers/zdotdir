@@ -1,0 +1,29 @@
+#!/bin/zsh
+##? Delete an alias from aliases.zsh
+
+if [ $# -ne 1 ]; then
+    echo "Usage: aliasdel <alias_name>"
+    return 1
+fi
+
+# Set alias file location
+alias_file="${ZDOTDIR:-$HOME}/.zshrc.d/aliases.zsh"
+
+# Check if alias file exists
+if [ ! -f "$alias_file" ]; then
+  echo "Error: Alias file $alias_file does not exist" >&2
+  return 1
+fi
+
+# Delete the alias from the file
+if sed -i "/^alias $1=/d" "$alias_file"; then
+    # If you want to reflect the changes immediately in your current shell, unalias the alias:
+    if unalias $1 2> /dev/null; then
+        echo "Alias $1 removed"
+    else
+        echo "Alias $1 not found in current shell"
+    fi
+else
+    echo "Error: Failed to remove alias $1 from $alias_file" >&2
+    return 1
+fi
