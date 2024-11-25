@@ -4,7 +4,7 @@
 #
 
 # Theme
-zstyle ':zephyr:plugin:prompt' theme starship ixs
+# zstyle ':zephyr:plugin:prompt' theme starship ixs
 
 # Antidote
 zstyle ':antidote:bundle' file ${ZDOTDIR:-~}/.zplugins

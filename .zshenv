@@ -1,62 +1,32 @@
 #!/bin/zsh
 #
-# .zprofile - Zsh file loaded on login.
+# .zshenv: Zsh environment file, loaded always.
 #
 
-#
-# Browser
-#
-
-if [[ "$OSTYPE" == darwin* ]]; then
-  export BROWSER="${BROWSER:-open}"
-fi
-
-#
-# Editors
-#
-
-export EDITOR="${EDITOR:-vim}"
-export VISUAL="${VISUAL:-vim}"
-export PAGER="${PAGER:-less}"
-
-#
-# Paths
-#
-
-# Ensure path arrays do not contain duplicates.
-typeset -gU path fpath
-
-# Set ZDOTDIR if you want to re-home Zsh.
 export ZDOTDIR=${ZDOTDIR:-$HOME/.config/zsh}
 
-export ZSH_CUSTOM=${ZSH_CUSTOM:-$ZDOTDIR}
-export ANTIDOTE_HOME=$ZDOTDIR/.cache/antidote
+# XDG
+export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
+export XDG_CACHE_HOME=${XDG_CACHE_HOME:-$HOME/.cache}
+export XDG_DATA_HOME=${XDG_DATA_HOME:-$HOME/.local/share}
+export XDG_STATE_HOME=${XDG_STATE_HOME:-$HOME/.local/state}
+export XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR:-$HOME/.xdg}
+export XDG_PROJECTS_DIR=${XDG_PROJECTS_DIR:-$HOME/Projects}
 
-export ZSH_THEME=$ZDOTDIR/themes/ixs.toml
+# Fish-like dirs
+: ${__zsh_config_dir:=${ZDOTDIR:-${XDG_CONFIG_HOME:-$HOME/.config}/zsh}}
+: ${__zsh_user_data_dir:=${XDG_DATA_HOME:-$HOME/.local/share}/zsh}
+: ${__zsh_cache_dir:=${XDG_CACHE_HOME:-$HOME/.cache}/zsh}
 
-export STARSHIP_CONFIG=$ZDOTDIR/themes/starship.toml
+# Ensure Zsh directories exist.
+() {
+  local zdir
+  for zdir in $@; do
+    [[ -d "${(P)zdir}" ]] || mkdir -p -- "${(P)zdir}"
+  done
+} __zsh_{config,user_data,cache}_dir XDG_{CONFIG,CACHE,DATA,STATE}_HOME XDG_{RUNTIME,PROJECTS}_DIR
 
-export HOMEBREW_PREFIX=${HOMEBREW_PREFIX:-/home/linuxbrew/.linuxbrew}
-export PYENV_ROOT=${PYENV_ROOT:-$HOME/.pyenv}
-# export PIPENV_VENV_IN_PROJECT=1
-
-# export ZSH_TMUX_AUTOSTART=true
-# export ZSH_TMUX_AUTOSTART_ONCE=false
-# export ZSH_TMUX_AUTOCONNECT=true
-
-export NVM_DIR=${NVM_DIR:-${XDG_CONFIG_DIR:-$HOME/.config}/nvm}
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# Set the list of directories that zsh searches for commands.
-path=(
-  $HOME/{,s}bin(N)
-  $HOME/.local/{,s}bin(N)
-  $PYENV_ROOT/bin(N)
-  $HOMEBREW_PREFIX/{,s}bin(N)
-  /opt/{homebrew,local}/{,s}bin(N)
-  /usr/local/{,s}bin(N)
-  $path
-)
-# eval "$(pyenv init -)"
-# eval "$(pyenv virtualenv-init -)"
+# Make Terminal.app behave.
+if [[ "$OSTYPE" == darwin* ]]; then
+  export SHELL_SESSIONS_DISABLE=1
+fi

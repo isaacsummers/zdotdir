@@ -3,41 +3,41 @@
 # .zshrc - Zsh file loaded on interactive shell sessions.
 #
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of .zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# Zsh options.
+setopt extended_glob
 
-# Lazy-load (autoload) Zsh function files from a directory.
-ZFUNCDIR=${ZDOTDIR:-$HOME}/.zfunctions
+# Autoload functions.
+ZFUNCDIR=${ZFUNCDIR:-$ZDOTDIR/functions}
 fpath=($ZFUNCDIR $fpath)
-autoload -Uz $ZFUNCDIR/*(.:t)
+autoload -Uz $fpath[1]/*(.:t)
 
-# Set any zstyles you might use for configuration.
-[[ ! -f ${ZDOTDIR:-$HOME}/.zstyles ]] || source ${ZDOTDIR:-$HOME}/.zstyles
+# Source zstyles.
+[[ -e ${ZDOTDIR:-~}/.zstyles ]] && source ${ZDOTDIR:-~}/.zstyles
+
+# # Set prompt theme
+# typeset -ga ZSH_THEME
+# zstyle -a ':zephyr:plugin:prompt' theme ZSH_THEME ||
+# ZSH_THEME=(starship ixs)
+
+# # Set helpers for antidote.
+# is-theme-p10k()     { [[ "$ZSH_THEME" == (p10k|powerlevel10k)* ]] }
+# is-theme-starship() { [[ "$ZSH_THEME" == starship* ]] }
+
+# # Aliases
+# [[ -r ${ZDOTDIR:-$HOME}/.zaliases ]] && source ${ZDOTDIR:-$HOME}/.zaliases
+
+# # Prompt
+# setopt prompt_subst transient_rprompt
+# autoload -Uz promptinit && promptinit
+# prompt "$ZSH_THEME[@]"
 
 # Clone antidote if necessary.
-if [[ ! -d ${ZDOTDIR:-$HOME}/.antidote ]]; then
-  git clone https://github.com/mattmc3/antidote ${ZDOTDIR:-$HOME}/.antidote
-fi
+[[ -d ${ZDOTDIR:-~}/.antidote ]] ||
+  git clone https://github.com/mattmc3/antidote ${ZDOTDIR:-~}/.antidote
 
-# Create an amazing Zsh config using antidote plugins.
-source ${ZDOTDIR:-$HOME}/.antidote/antidote.zsh
+# Zsh config.
+source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load
-
-# Source anything in .zshrc.d.
-for _rc in ${ZDOTDIR:-$HOME}/.zshrc.d/*.zsh; do
-  # Ignore tilde files.
-  if [[ $_rc:t != '~'* ]]; then
-    source "$_rc"
-  fi
-done
-unset _rc
-
-# To customize prompt, run `p10k configure` or edit .p10k.zsh.
-[[ ! -f ${ZDOTDIR:-$HOME}/.p10k.zsh ]] || source ${ZDOTDIR:-$HOME}/.p10k.zsh
 
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
