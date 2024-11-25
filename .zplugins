@@ -35,7 +35,7 @@ romkatv/powerlevel10k kind:fpath
 
 $ZSH_CUSTOM/plugins/git
 $ZSH_CUSTOM/plugins/golang
-$ZSH_CUSTOM/plugins/otp
+# $ZSH_CUSTOM/plugins/otp
 $ZSH_CUSTOM/plugins/python
 
 #
@@ -47,7 +47,11 @@ mattmc3/zephyr path:plugins/directory
 mattmc3/zephyr path:plugins/history
 mattmc3/zephyr path:plugins/utility
 romkatv/zsh-bench kind:path
+fdellwing/zsh-bat
 ohmyzsh/ohmyzsh path:plugins/extract
+ohmyzsh/ohmyzsh path:plugins/git
+ohmyzsh/ohmyzsh path:plugins/gitfast
+ohmyzsh/ohmyzsh path:plugins/dbt
 mattmc3/zman
 
 #
@@ -62,8 +66,8 @@ romkatv/zsh-no-ps2
 # macOS
 #
 
-mattmc3/zephyr path:plugins/macos conditional:is-macos
-ohmyzsh/ohmyzsh path:plugins/iterm2 conditional:is-macos
+# mattmc3/zephyr path:plugins/macos conditional:is-macos
+# ohmyzsh/ohmyzsh path:plugins/iterm2 conditional:is-macos
 
 #
 # Fish-like
@@ -71,8 +75,12 @@ ohmyzsh/ohmyzsh path:plugins/iterm2 conditional:is-macos
 
 mattmc3/zephyr path:plugins/zfunctions
 mattmc3/zephyr path:plugins/confd
-#zdharma-continuum/fast-syntax-highlighting
+z-shell/zsh-eza kind:defer
+# zdharma-continuum/fast-syntax-highlighting
 zsh-users/zsh-syntax-highlighting
+MichaelAquilina/zsh-you-should-use kind:defer
+junegunn/fzf kind:fpath
+aloxaf/fzf-tab
 zsh-users/zsh-autosuggestions post:post-autosuggestions
 zsh-users/zsh-history-substring-search post:post-history-substring-search
 
