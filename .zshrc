@@ -24,7 +24,9 @@ alias zprofrc="ZPROFRC=1 zsh"
 # Set prompt theme
 typeset -ga ZSH_THEME
 zstyle -a ':zephyr:plugin:prompt' theme ZSH_THEME ||
-ZSH_THEME=(starship mmc)
+# ZSH_THEME=(p10k pure)
+ZSH_THEME=(p10k mmc)
+# ZSH_THEME=(restore)
 
 # Set helpers for antidote.
 is-theme-p10k()     { [[ "$ZSH_THEME" == (p10k|powerlevel10k)* ]] }

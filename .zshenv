@@ -4,6 +4,7 @@
 #
 
 export ZDOTDIR=${ZDOTDIR:-$HOME/.config/zsh}
+# export ANTIDOTE_HOME=$ZDOTDIR/.cache/antidote
 
 # XDG
 export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
@@ -30,3 +31,12 @@ export XDG_PROJECTS_DIR=${XDG_PROJECTS_DIR:-$HOME/Projects}
 if [[ "$OSTYPE" == darwin* ]]; then
   export SHELL_SESSIONS_DISABLE=1
 fi
+
+export PYENV_ROOT=${PYENV_ROOT:-$HOME/.pyenv/pyenv-win}
+
+path=(
+  $HOME/{,s}bin(N)
+  $PYENV_ROOT/bin(N)
+  /usr/local/{,s}bin(N)
+  $path
+)

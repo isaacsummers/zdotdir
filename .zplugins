@@ -7,9 +7,9 @@
 #
 
 $ZSH_CUSTOM/plugins/p10k-instaprompt conditional:is-theme-p10k
-$ZSH_CUSTOM/plugins/starship-ftl conditional:is-theme-starship
+# $ZSH_CUSTOM/plugins/starship-ftl conditional:is-theme-starship
 mattmc3/zephyr path:plugins/environment
-mattmc3/zephyr path:plugins/homebrew
+# mattmc3/zephyr path:plugins/homebrew
 $ZSH_CUSTOM/plugins/xdg
 
 #
@@ -34,9 +34,10 @@ romkatv/powerlevel10k kind:fpath
 #
 
 $ZSH_CUSTOM/plugins/git
-$ZSH_CUSTOM/plugins/golang
+# $ZSH_CUSTOM/plugins/pyenv
+# $ZSH_CUSTOM/plugins/golang
 # $ZSH_CUSTOM/plugins/otp
-$ZSH_CUSTOM/plugins/python
+# $ZSH_CUSTOM/plugins/python
 
 #
 # Utils
@@ -47,20 +48,20 @@ mattmc3/zephyr path:plugins/directory
 mattmc3/zephyr path:plugins/history
 mattmc3/zephyr path:plugins/utility
 romkatv/zsh-bench kind:path
-fdellwing/zsh-bat
-ohmyzsh/ohmyzsh path:plugins/extract
+# fdellwing/zsh-bat
+# ohmyzsh/ohmyzsh path:plugins/extract
 ohmyzsh/ohmyzsh path:plugins/git
 ohmyzsh/ohmyzsh path:plugins/gitfast
-ohmyzsh/ohmyzsh path:plugins/dbt
+# ohmyzsh/ohmyzsh path:plugins/dbt
 mattmc3/zman
 
 #
 # Editor
 #
 
-mattmc3/zephyr path:plugins/editor
-jeffreytse/zsh-vi-mode
-romkatv/zsh-no-ps2
+# mattmc3/zephyr path:plugins/editor
+# jeffreytse/zsh-vi-mode
+# romkatv/zsh-no-ps2
 
 #
 # macOS
@@ -75,13 +76,13 @@ romkatv/zsh-no-ps2
 
 mattmc3/zephyr path:plugins/zfunctions
 mattmc3/zephyr path:plugins/confd
-z-shell/zsh-eza kind:defer
-# zdharma-continuum/fast-syntax-highlighting
+# z-shell/zsh-eza kind:defer
+# # zdharma-continuum/fast-syntax-highlighting
 zsh-users/zsh-syntax-highlighting
 MichaelAquilina/zsh-you-should-use kind:defer
-junegunn/fzf kind:fpath
-aloxaf/fzf-tab
+# junegunn/fzf kind:fpath
+# # aloxaf/fzf-tab
 zsh-users/zsh-autosuggestions post:post-autosuggestions
 zsh-users/zsh-history-substring-search post:post-history-substring-search
 
-# vi: ft=properties
+# # vi: ft=properties

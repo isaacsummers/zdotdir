@@ -145,6 +145,7 @@ alias dbtcss='dbt compile --selector'
 # Poetry commands
 alias ptr='poetry'
 alias ptra='poetry add'
+alias ptrss='ssenv; poetry shell'
 
 # Miscellaneous
 alias please=sudo
