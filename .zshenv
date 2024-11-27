@@ -32,10 +32,15 @@ if [[ "$OSTYPE" == darwin* ]]; then
   export SHELL_SESSIONS_DISABLE=1
 fi
 
-export PYENV_ROOT=${PYENV_ROOT:-$HOME/.pyenv/pyenv-win}
+export PYENV=${PYENV:-${HOME}/.pyenv/pyenv-win}
+export PYENV_ROOT=${PYENV_ROOT:-${PYENV}}
+export PYENV_HOME=${PYENV_HOME:-${PYENV}}
 
 path=(
   $HOME/{,s}bin(N)
+  $HOME/.local/{,s}bin(N)
+  $HOME/.local/share(N)
+  $PYENV_ROOT/shims(N)
   $PYENV_ROOT/bin(N)
   /usr/local/{,s}bin(N)
   $path

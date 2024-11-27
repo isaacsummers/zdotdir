@@ -103,6 +103,7 @@ alias zrr='exec zsh -l'
 alias takeover="tmux detach -a"
 alias ssenv='set -a; source .env; set +a'
 alias shlev='echo 1'
+alias ppath='echo $PATH | tr ":" "\n"'
 
 # Pyenv commands
 alias pye='pyenv'
@@ -118,6 +119,10 @@ alias pyvd='pyenv virtualenv-delete'
 alias pyvi='pyenv virtualenv-init'
 alias pyvp='pyenv virtualenv-prefix'
 alias wpyy='pyenv which python3'
+
+# Python commands
+alias spython='/c/Users/ISummers/AppData/Local/Programs/Python/Python312/python'
+alias spip='/c/Users/ISummers/AppData/Local/Programs/Python/Python312/Scripts/pip3'
 
 # Pip commands
 alias pipup='python -m pip install -U pip'
@@ -141,10 +146,13 @@ alias dbtbfss='dbt build --full-refresh --selector'
 alias dbtc='dbt compile'
 alias dbtcs='dbt compile -s'
 alias dbtcss='dbt compile --selector'
+alias dbtp='dbt parse'
+alias dbtd='dbt debug'
 
 # Poetry commands
 alias ptr='poetry'
 alias ptra='poetry add'
+alias ptrs='poetry shell'
 alias ptrss='ssenv; poetry shell'
 
 # Miscellaneous

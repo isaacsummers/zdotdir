@@ -33,11 +33,11 @@ if grep -q "^alias $alias_name=" $ZDOTDIR/.zaliases; then
   return 1
 fi
 
-if echo "alias $alias_name=$escaped_command" >> "$alias_file"; then
+if echo "alias $alias_name=$escaped_command" >> "$ZDOTDIR/.zaliases"; then
   # Reload the aliases file to make the new alias available
-  source "$alias_file"
+  source "$ZDOTDIR/.zaliases"
   echo "Alias $alias_name added for '$command'"
 else
-  echo "Error: Failed to add alias $alias_name to $alias_file" >&2
+  echo "Error: Failed to add alias $alias_name to $ZDOTDIR/.zaliases" >&2
   return 1
 fi
