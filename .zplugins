@@ -76,7 +76,7 @@ romkatv/zsh-no-ps2
 
 mattmc3/zephyr path:plugins/zfunctions
 mattmc3/zephyr path:plugins/confd
-# z-shell/zsh-eza kind:defer
+z-shell/zsh-eza kind:defer
 MichaelAquilina/zsh-you-should-use kind:defer
 zdharma-continuum/fast-syntax-highlighting
 # zsh-users/zsh-syntax-highlighting
