@@ -1,0 +1,59 @@
+# Shell commands
+alias zrr='exec zsh -l'
+alias takeover="tmux detach -a"
+alias ssenv='set -a; source .env; set +a'
+alias shlev='echo 1'
+alias please=sudo
+alias zshrc='${EDITOR:-vim} "${ZDOTDIR:-$HOME}"/.zshrc'
+alias ag='alias | grep'
+alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
+alias ppath='echo -e ${PATH//:/\\n}'
+alias areload='source ${ZDOTDIR:-$HOME}/.zaliases-custom'
+
+# Pyenv commands
+alias pye='pyenv'
+alias pyl='pyenv local'
+alias pylu='pyenv local --unset'
+alias pyg='pyenv global'
+alias pygu='pyenv global --unset'
+alias pys='pyenv shell'
+alias pysu='pyenv shell --unset'
+alias pyv='pyenv virtualenv'
+alias pyvs='pyenv virtualenvs'
+alias pyvd='pyenv virtualenv-delete'
+alias pyvi='pyenv virtualenv-init'
+alias pyvp='pyenv virtualenv-prefix'
+alias wpyy='pyenv which python3'
+
+# Python commands
+alias python='python3'
+
+# Pip commands
+alias pipup='python -m pip install -U pip'
+alias pipunall='pip freeze > requirements_del.txt && pip uninstall -y -r requirements_del.txt'
+
+# DBT commands
+alias dbtl='dbt ls'
+alias dbtls='dbt ls -s'
+alias dbtlss='dbt ls --selector'
+alias dbtr='dbt run'
+alias dbtrs='dbt run -s'
+alias dbtrss='dbt run --selector'
+alias dbtrf='dbt run --full-refresh'
+alias dbtrfs='dbt run --full-refresh -s'
+alias dbtrfss='dbt run --full-refresh --selector'
+alias dbtb='dbt build'
+alias dbtbs='dbt build -s'
+alias dbtbss='dbt build --selector'
+alias dbtbf='dbt build --full-refresh'
+alias dbtbfs='dbt build --full-refresh -s'
+alias dbtbfss='dbt build --full-refresh --selector'
+alias dbtc='dbt compile'
+alias dbtcs='dbt compile -s'
+alias dbtcss='dbt compile --selector'
+
+# Poetry commands
+alias ptr='poetry'
+alias ptra='poetry add'
+
+# Misc

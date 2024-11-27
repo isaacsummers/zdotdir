@@ -43,6 +43,7 @@ unset zlib
 #
 
 [[ -r ${ZDOTDIR:-$HOME}/.zaliases ]] && source ${ZDOTDIR:-$HOME}/.zaliases
+[[ -r ${ZDOTDIR:-$HOME}/.zaliases-custom ]] && source ${ZDOTDIR:-$HOME}/.zaliases-custom
 
 #
 # Completions
