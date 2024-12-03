@@ -26,4 +26,4 @@
   # fi
 
   # trap 'vfox env --cleanup' EXIT
-fi
+# fi

@@ -1,15 +1,20 @@
 #!/bin/zsh
-# FILE: safe_eval
-
-# Define the safe_eval function
-# safe_eval() {
+safe_eval() {
   local input="$1"
+  local system_type=$(uname -s)
+
   # echo "safe_eval: $input"
   # Replace single and double backslashes with forward slashes
-  local fixed_input=$(echo -E "$input" | sed 's/\\\\/\\/g; s/\\/\//g')
+  if [[ "$system_type" == "MINGW"* || "$system_type" == "MSYS"* || "$system_type" == "CYGWIN"* ]]; then
+    local fixed_input=$(echo -E "$input" | sed 's/\\\\/\\/g; s/\\/\//g')
+  else
+    local fixed_input="$input"
+  fi
+
   builtin eval "$fixed_input"
-  echo -E $fixed_input
-# }
+  # echo -E $fixed_input
+}
+safe_eval "$@"
 
 # Override the default eval with safe_eval
 # alias eval='safe_eval'

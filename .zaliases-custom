@@ -67,3 +67,4 @@ alias ptrc='poetry config'
 alias ptrcl='poetry config --list'
 
 # Misc
+alias mz='mise'

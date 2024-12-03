@@ -21,7 +21,7 @@ unset _xdgdir
 # eval "$(vfox activate zsh)"
 
 # mise
-path=(
-  $HOME/.local/share/mise/shims(N)
-  $path
-)
+# path=(
+#   $HOME/.local/share/mise/shims(N)
+#   $path
+# )
