@@ -1,0 +1,22 @@
+function fix_windows_path() {
+  local input="$1"
+  local fixed_path
+
+  # Process each line separately
+  while IFS= read -r line; do
+    if [[ "$line" == export* ]]; then
+      # Extract the path part from the export statement
+      local path_part="${line#*=}"
+      # Remove surrounding quotes if present
+      path_part="${path_part%\'*}"
+      path_part="${path_part#\'*}"
+      # Convert the entire path list using cygpath with -p for path list
+      fixed_path=$(cygpath -up "$path_part")
+      echo "${line%%=*}='$fixed_path'"
+    else
+      echo "$line"
+    fi
+  done <<< "$input"
+}
+
+fix_windows_path "$@"

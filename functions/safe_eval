@@ -1,0 +1,15 @@
+#!/bin/zsh
+# FILE: safe_eval
+
+# Define the safe_eval function
+# safe_eval() {
+  local input="$1"
+  # echo "safe_eval: $input"
+  # Replace single and double backslashes with forward slashes
+  local fixed_input=$(echo -E "$input" | sed 's/\\\\/\\/g; s/\\/\//g')
+  builtin eval "$fixed_input"
+  echo -E $fixed_input
+# }
+
+# Override the default eval with safe_eval
+# alias eval='safe_eval'

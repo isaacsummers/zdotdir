@@ -1,5 +1,6 @@
 # Shell commands
-alias zrr='exec zsh -l'
+alias zrr='exec /usr/bin/bash --login -i'
+# alias zrr='exec zsh -l'
 alias takeover="tmux detach -a"
 alias ssenv='set -a; source .env; set +a'
 alias shlev='echo 1'
@@ -9,6 +10,7 @@ alias ag='alias | grep'
 alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
 alias ppath='echo -e ${PATH//:/\\n}'
 alias areload='source ${ZDOTDIR:-$HOME}/.zaliases-custom'
+alias eval='safe_eval'
 
 # Pyenv commands
 alias pye='pyenv'
@@ -18,15 +20,18 @@ alias pyg='pyenv global'
 alias pygu='pyenv global --unset'
 alias pys='pyenv shell'
 alias pysu='pyenv shell --unset'
+alias pyenvs='pyenv versions'
 alias pyv='pyenv virtualenv'
 alias pyvs='pyenv virtualenvs'
 alias pyvd='pyenv virtualenv-delete'
 alias pyvi='pyenv virtualenv-init'
 alias pyvp='pyenv virtualenv-prefix'
 alias wpyy='pyenv which python3'
+alias pyV='python -V'
+alias pyVV='python -V; pip -V'
 
 # Python commands
-alias python='python3'
+# alias python='python3'
 
 # Pip commands
 alias pipup='python -m pip install -U pip'
@@ -55,5 +60,9 @@ alias dbtcss='dbt compile --selector'
 # Poetry commands
 alias ptr='poetry'
 alias ptra='poetry add'
+alias ptrs='poetry shell'
+alias ptrss='ssenv; poetry shell'
+alias ptrc='poetry config'
+alias ptrcl='poetry config --list'
 
 # Misc

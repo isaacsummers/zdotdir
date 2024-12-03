@@ -1,0 +1,20 @@
+  # local input="$1"
+  # echo -E "$input" | \
+  #   sed 's/\\:/\x01/g' | sed 's/:/\\:/g' | sed 's/\\://g' | \
+  #   sed 's/\\;/\x02/g' | sed 's/;/:/g' | sed 's/\x02/;/g' | \
+  #   sed 's/\\\\/\\/g' | sed 's/\\/\//g'
+
+  local input="$1"
+  echo -E "$input" | sed -e '
+    s/\\:/\x01/g
+    s/://g
+    s/\x01/:/g
+
+    s/\\;/\x02/g
+    s/;/:/g
+    s/\x02/;/g
+
+
+    s/\\\\/\\/g
+    s/\\/\//g
+  '
