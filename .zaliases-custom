@@ -11,6 +11,7 @@ alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
 alias ppath='echo -e ${PATH//:/\\n}'
 alias areload='source ${ZDOTDIR:-$HOME}/.zaliases-custom'
 alias eval='safe_eval'
+alias export='safe_export'
 
 # Pyenv commands
 alias pye='pyenv'
