@@ -30,4 +30,10 @@ export XDG_PROJECTS_DIR=${XDG_PROJECTS_DIR:-$HOME/Projects}
 if [[ "$OSTYPE" == darwin* ]]; then
   export SHELL_SESSIONS_DISABLE=1
 fi
+system_type=$(uname -s)
 
+# make evals and exports behave
+source $ZDOTDIR/lib/_safeevalexp.zsh
+# if [[ "$system_type" == "MINGW"* || "$system_type" == "MSYS"* || "$system_type" == "CYGWIN"* ]]; then
+#   source $ZDOTDIR/lib/_safeevalexp.zsh
+# fi

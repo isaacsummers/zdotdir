@@ -6,13 +6,22 @@ safe_eval() {
   local input="$1"
 
   # Replace single and double backslashes with forward slashes
-  if [[ "$system_type" == "MINGW"* || "$system_type" == "MSYS"* || "$system_type" == "CYGWIN"* ]]; then
-    local fixed_input=$(echo -E "$input" | sed 's/\\\\/\\/g; s/\\/\//g')
-  else
-    local fixed_input="$input"
-  fi
+  # if [[ "$system_type" == "MINGW"* || "$system_type" == "MSYS"* || "$system_type" == "CYGWIN"* ]]; then
+  local fixed_input=$(echo -E "$input" | sed 's/\\\\/\\/g; s/\\/\//g')
+  # else
+  #   local fixed_input="$input"
+  # fi
 
+  # Temporarily override export within safe_eval
+  export() {
+    safe_export "$@"
+  }
+
+  # Execute the command
   builtin eval "$fixed_input"
+
+  # Restore original export
+  unset -f export
 }
 
 safe_export() {
@@ -42,22 +51,18 @@ safe_export() {
   fi
 }
 
-# Function to wrap around eval "$(mise activate zsh)"
+
 safe_eval_export() {
   local command="$1"
 
-  # Temporarily override eval and export
+  # Temporarily override eval
   eval() {
     safe_eval "$@"
   }
-  export() {
-    safe_export "$@"
-  }
 
   # Execute the command
-  eval "$command"
+  builtin eval "$command"
 
-  # Restore original eval and export
+  # Restore original eval
   unset -f eval
-  unset -f export
 }

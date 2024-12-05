@@ -24,7 +24,6 @@ cdpath=(
 )
 
 prepath=(
-  # $HOME/.version-fox/shims(N)
   $prepath
 )
 
