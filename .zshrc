@@ -3,10 +3,13 @@
 # .zshrc - Run on interactive Zsh session.
 #
 
+# Enable debugging
+echo 'Loading zshrc'
+# set -x
+
 #
 # Profiling
 #
-
 [[ "$ZPROFRC" -ne 1 ]] || zmodload zsh/zprof
 alias zprofrc="ZPROFRC=1 zsh"
 
@@ -79,6 +82,9 @@ prompt "$ZSH_THEME[@]"
 # Finish profiling by calling zprof.
 [[ "$ZPROFRC" -eq 1 ]] && zprof
 [[ -v ZPROFRC ]] && unset ZPROFRC
+
+# Disable debugging
+# set +x
 
 # Always return success
 true
