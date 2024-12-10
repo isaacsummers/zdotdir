@@ -11,7 +11,10 @@ alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
 alias ppath='echo -e ${PATH//:/\\n}'
 alias areload='source ${ZDOTDIR:-$HOME}/.zaliases-custom'
 alias eval='safe_eval'
-alias export='safe_export'
+# alias export='safe_export'
+alias grep='grep --color=auto -i'
+alias envfzf='env | fzf'
+alias envgrep='env | grep'
 
 # Pyenv commands
 alias pye='pyenv'
@@ -32,6 +35,7 @@ alias pyV='python -V'
 alias pyVV='python -V; pip -V'
 
 # Python commands
+alias py='python'
 # alias python='python3'
 alias svenv='source .venv/Scripts/activate'
 alias ssvenv='ssenv; svenv'
@@ -72,6 +76,7 @@ alias ptris='poetry install --sync'
 alias ptru='poetry update'
 alias ptrl='poetry lock'
 alias ptrlnu='poetry lock --no-update'
+alias ptrex="poetry export --without-hashes --without-urls | awk '{ print $1 }' FS=';' >| requirements.txt"
 
 # Mise
 alias m='mise'

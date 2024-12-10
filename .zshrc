@@ -6,6 +6,7 @@
 # Enable debugging
 echo 'Loading zshrc'
 # set -x
+# set -v
 
 #
 # Profiling
@@ -26,8 +27,9 @@ alias zprofrc="ZPROFRC=1 zsh"
 
 # Set prompt theme
 typeset -ga ZSH_THEME
-zstyle -a ':zephyr:plugin:prompt' theme ZSH_THEME || ZSH_THEME=(restore)
+zstyle -a ':zephyr:plugin:prompt' theme ZSH_THEME || ZSH_THEME=(p10k pure)
 # ZSH_THEME=(p10k mmc)
+ZSH_THEME=(p10k pure)
 
 # Set helpers for antidote.
 is-theme-p10k()     { [[ "$ZSH_THEME" == (p10k|powerlevel10k)* ]] }
@@ -37,9 +39,11 @@ is-theme-starship() { [[ "$ZSH_THEME" == starship* ]] }
 # Libs
 #
 
+# set -v
 # Load things from lib.
 for zlib in $ZDOTDIR/lib/*.zsh; source $zlib
 unset zlib
+# set +v
 
 #
 # Aliases
@@ -79,12 +83,18 @@ prompt "$ZSH_THEME[@]"
 # Manually call post_zshrc to bypass the hook
 (( $+functions[run_post_zshrc] )) && run_post_zshrc
 
+# path=(
+#   # ~/.local/share/mise/shims(N)
+#   $path
+# )
+
 # Finish profiling by calling zprof.
 [[ "$ZPROFRC" -eq 1 ]] && zprof
 [[ -v ZPROFRC ]] && unset ZPROFRC
 
 # Disable debugging
 # set +x
+# set +v
 
 # Always return success
 true

@@ -25,8 +25,8 @@ setopt NO_hist_beep            # Don't beep when accessing non-existent history.
 # Set history vars.
 HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/zsh_history"
 mkdir -p "${HISTFILE:h}"  # ensure directory exists
-SAVEHIST=200           # history file entries
-HISTSIZE=50            # session entries
+SAVEHIST=1000           # history file entries
+HISTSIZE=1000          # session entries
 
 # Set history aliases.
 alias hist='fc -liL'

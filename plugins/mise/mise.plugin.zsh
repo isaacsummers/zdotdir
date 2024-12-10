@@ -5,104 +5,96 @@ export MISE_TOOL_OPTS__VIRTUALENV=.venv
 export MISE_PYTHON_COMPILE=1
 export PYTHON_BUILD_FREE_THREADING=1
 
-if [[ "$TERM_PROGRAM" == "vscode" ]]; then
-  path=($HOME/.local/share/mise/shims(N) $path)
-  # safe_eval_export 'eval "$($HOME/.local/bin/mise activate zsh)"'
-else
-  export MISE_SHELL=zsh
-  export __MISE_ORIG_PATH="$PATH"
+# if [[ "$TERM_PROGRAM" == "vscode" ]]; then
+#     typeset -gxU prepath
+#     prepath=(
+#         $XDG_DATA_HOME/mise/shims(N)
+#         $prepath
+#     )
+# else
+    export MISE_SHELL=zsh
+    export __MISE_ORIG_PATH="$PATH"
 
-  mise() {
+    mise() {
     local command
     command="${1:-}"
     if [ "$#" = 0 ]; then
-      command ~/.local/bin/mise
-      return
+        command ~/.local/bin/mise
+        return
     fi
     shift
 
     case "$command" in
     deactivate|shell|sh)
-      # if argv doesn't contains -h,--help
-      if [[ ! " $@ " =~ " --help " ]] && [[ ! " $@ " =~ " -h " ]]; then
+        # if argv doesn't contains -h,--help
+        if [[ ! " $@ " =~ " --help " ]] && [[ ! " $@ " =~ " -h " ]]; then
         eval "$(command ~/.local/bin/mise "$command" "$@")"
         return $?
-      fi
-      ;;
+        fi
+        ;;
     esac
     command ~/.local/bin/mise "$command" "$@"
-  }
+    }
 
-  # original mise hook
-  # _mise_hook() {
-  #   eval "$(C:\Users\ISummers\.local\bin\mise.exe hook-env -s zsh)";
-  # }
+    _mise_hook() {
+        # Capture the output of the mise hook-env command
+        local mise_output
+        mise_output=$(mise hook-env -s zsh)
 
-  # fixed mise hook using cygpath to convert export lines with Windows paths to Unix paths
-  _mise_hook() {
-      local _mise_hook_env
-      _mise_hook_env="$(~/.local/bin/mise hook-env -s zsh)"
+        # Process each export statement individually
+        while IFS= read -r line; do
+            if [[ $line == export* ]]; then
+                # Extract the variable name and value
+                var_name=${line#export }
+                var_name=${var_name%%=*}
+                var_value=${line#*=}
 
-      # Split the environment variables into an array of lines
-      local _mise_hook_env_lines
-      _mise_hook_env_lines=("${(@f)_mise_hook_env}")
+                # Remove single quotes if present
+                if [[ "$var_value" == \'*\' ]]; then
+                    var_value="${var_value:1:-1}"
+                fi
 
-      # Loop through each line
-      for line in "${_mise_hook_env_lines[@]}"; do
-          if [[ $line == export* ]]; then
-              # Extract the key and value from the export statement
-              local key value
-              key="${line#export }"
-              key="${key%%=*}"
-              value="${line#*=}"
+                # Special handling for PATH variable
+                if [[ "$var_name" == "PATH" || "$var_name" == *"DIR"* ]]; then
+                    var_value=$(cygpath -up "$var_value")
+                    export "$var_name"="$var_value"
+                else
+                    # Export the variable as is
+                    export "$var_name=$var_value"
+                fi
+            else
+                # Evaluate non-export lines as is
+                eval "$line"
+            fi
+        done <<< "$mise_output"
+    }
 
-              # Strip surrounding single quotes if present
-              if [[ "$value" == \'*\' ]]; then
-                  value="${value:1:-1}"
-              fi
+    # Hook into zsh
+    typeset -ag precmd_functions;
+    if [[ -z "${precmd_functions[(r)_mise_hook]+1}" ]]; then
+    precmd_functions=( _mise_hook ${precmd_functions[@]} )
+    fi
+    typeset -ag chpwd_functions;
+    if [[ -z "${chpwd_functions[(r)_mise_hook]+1}" ]]; then
+    chpwd_functions=( _mise_hook ${chpwd_functions[@]} )
+    fi
 
-              # Convert the entire value using cygpath -up
-              local new_value
-              new_value=$(cygpath -up "$value")
+    if [ -z "${_mise_cmd_not_found:-}" ]; then
+        _mise_cmd_not_found=1
+        [ -n "$(declare -f command_not_found_handler)" ] && eval "${$(declare -f command_not_found_handler)/command_not_found_handler/_command_not_found_handler}"
 
-              # Reconstruct the export statement with the converted paths
-              eval "export $key=\"$new_value\"" >/dev/null 2>&1
-          else
-              # Evaluate non-export lines as is, suppressing output
-              eval "$line" >/dev/null 2>&1
-          fi
-      done
-  }
-
-  # Add _mise_hook to precmd_functions and chpwd_functions
-  typeset -ag precmd_functions
-  if [[ -z "${precmd_functions[(r)_mise_hook]+1}" ]]; then
-      precmd_functions=( _mise_hook "${precmd_functions[@]}" )
-  fi
-
-  typeset -ag chpwd_functions
-  if [[ -z "${chpwd_functions[(r)_mise_hook]+1}" ]]; then
-      chpwd_functions=( _mise_hook "${chpwd_functions[@]}" )
-  fi
-
-  _mise_hook
-  if [ -z "${_mise_cmd_not_found:-}" ]; then
-      _mise_cmd_not_found=1
-      [ -n "$(declare -f command_not_found_handler)" ] && eval "${$(declare -f command_not_found_handler)/command_not_found_handler/_command_not_found_handler}"
-
-      function command_not_found_handler() {
-          if ~/.local/bin/mise hook-not-found -s zsh -- "$1"; then
+        function command_not_found_handler() {
+            if ~/.local/bin/mise hook-not-found -s zsh -- "$1"; then
             _mise_hook
             "$@"
-          elif [ -n "$(declare -f _command_not_found_handler)" ]; then
-              _command_not_found_handler "$@"
-          else
-              echo "zsh: command not found: $1" >&2
-              return 127
-          fi
-      }
-  fi
+            elif [ -n "$(declare -f _command_not_found_handler)" ]; then
+                _command_not_found_handler "$@"
+            else
+                echo "zsh: command not found: $1" >&2
+                return 127
+            fi
+        }
+    fi
 
-
-fi
+# fi
 echo 'mise.plugin.zsh loaded'
