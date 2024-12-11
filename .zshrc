@@ -73,6 +73,9 @@ prompt "$ZSH_THEME[@]"
 # Never start in the root file system. Looking at you, Zed.
 [[ "$PWD" != "/" ]] || cd
 
+# fix fzf-tab
+zstyle ':completion:*:descriptions' format "[%d]"
+
 # Manually call post_zshrc to bypass the hook
 (( $+functions[run_post_zshrc] )) && run_post_zshrc
 

@@ -1,5 +1,6 @@
 # Shell commands
 alias zrr='exec zsh --login -i'
+alias areload='source ${ZDOTDIR:-$HOME}/.zaliases-custom'
 alias takeover="tmux detach -a"
 alias ssenv='set -a; source .env; set +a'
 alias shlev='echo 1'
@@ -8,7 +9,7 @@ alias zshrc='${EDITOR:-vim} "${ZDOTDIR:-$HOME}"/.zshrc'
 alias ag='alias | grep'
 alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
 alias ppath='echo -e ${PATH//:/\\n}'
-alias areload='source ${ZDOTDIR:-$HOME}/.zaliases-custom'
+alias pfpath='echo -e ${FPATH//:/\\n}'
 alias grep='grep --color=auto -i'
 alias envfzf='env | fzf'
 alias envgrep='env | grep'
@@ -23,11 +24,12 @@ alias pys='pyenv shell'
 alias pysu='pyenv shell --unset'
 alias pyenvs='pyenv versions'
 alias pyv='pyenv virtualenv'
-alias pyvs='pyenv virtualenvs'
-alias pyvd='pyenv virtualenv-delete'
-alias pyvi='pyenv virtualenv-init'
-alias pyvp='pyenv virtualenv-prefix'
-alias wpyy='pyenv which python3'
+# alias pyvs='pyenv virtualenvs'
+# alias pyvd='pyenv virtualenv-delete'
+# alias pyvi='pyenv virtualenv-init'
+# alias pyvp='pyenv virtualenv-prefix'
+# alias wpyy='pyenv which python3'
+alias wpyy='which python3'
 alias pyV='python -V'
 alias pyVV='python -V; pip -V'
 
@@ -87,6 +89,6 @@ alias mcfg='mise config'
 alias mu='mise use'
 
 # UV
-alias v='uv'
+# alias v='uv'
 
 # Misc
