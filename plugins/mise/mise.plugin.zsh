@@ -1,17 +1,12 @@
 # eval_export 'eval "$(mise activate zsh)"'
 echo 'Loading mise.plugin.zsh'
 export MISE_ENV_FILE=.env
-export MISE_TOOL_OPTS__VIRTUALENV=.venv
-export MISE_PYTHON_COMPILE=1
-export PYTHON_BUILD_FREE_THREADING=1
+# export MISE_TOOL_OPTS__VIRTUALENV=.venv
+# export MISE_PYTHON_COMPILE=1
+# export PYTHON_BUILD_FREE_THREADING=1
 
-# if [[ "$TERM_PROGRAM" == "vscode" ]]; then
-#     typeset -gxU prepath
-#     prepath=(
-#         $XDG_DATA_HOME/mise/shims(N)
-#         $prepath
-#     )
-# else
+if [[ "$TERM_PROGRAM" != "vscode-" ]]; then
+
     export MISE_SHELL=zsh
     export __MISE_ORIG_PATH="$PATH"
 
@@ -96,5 +91,7 @@ export PYTHON_BUILD_FREE_THREADING=1
         }
     fi
 
-# fi
+    # initial call to hook
+    _mise_hook
+fi
 echo 'mise.plugin.zsh loaded'

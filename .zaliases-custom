@@ -10,7 +10,7 @@ alias ag='alias | grep'
 alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
 alias ppath='echo -e ${PATH//:/\\n}'
 alias areload='source ${ZDOTDIR:-$HOME}/.zaliases-custom'
-alias eval='safe_eval'
+# alias eval='safe_eval'
 # alias export='safe_export'
 alias grep='grep --color=auto -i'
 alias envfzf='env | fzf'
@@ -88,5 +88,8 @@ alias mdoc='mise doctor'
 alias mls='mise ls'
 alias mcfg='mise config'
 alias mu='mise use'
+
+# UV
+alias v='uv'
 
 # Misc

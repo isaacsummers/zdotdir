@@ -22,3 +22,8 @@ export POETRY_CONFIG_DIR=${POETRY_CONFIG_DIR:-$XDG_CONFIG_HOME/pypoetry}
 export POETRY_DATA_DIR=${POETRY_DATA_DIR:-$XDG_DATA_HOME/pypoetry}
 export POETRY_CACHE_DIR=${POETRY_CACHE_DIR:-$XDG_CACHE_HOME/pypoetry}
 
+export UV_DEFAULT_INDEX=https://jfrog.corp.jefco.com/artifactory/api/pypi/Python-Remote/simple
+
+export MAGIC_ENTER_GIT_COMMAND="git status -sb ."
+
+export MISE_PYTHON_UV_VENV_AUTO=true
