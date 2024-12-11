@@ -34,7 +34,7 @@ romkatv/powerlevel10k kind:fpath
 #
 
 $ZSH_CUSTOM/plugins/git
-$ZSH_CUSTOM/plugins/pyenv
+# $ZSH_CUSTOM/plugins/pyenv
 $ZSH_CUSTOM/plugins/mise
 
 #
@@ -50,6 +50,7 @@ ohmyzsh/ohmyzsh path:plugins/extract
 ohmyzsh/ohmyzsh path:plugins/git
 ohmyzsh/ohmyzsh path:plugins/gitfast
 ohmyzsh/ohmyzsh path:plugins/dbt
+ohmyzsh/ohmyzsh path:plugins/magic-enter
 mattmc3/zman
 # xPMo/zsh-ls-colors path:lib
 
@@ -76,11 +77,11 @@ mattmc3/zephyr path:plugins/zfunctions
 mattmc3/zephyr path:plugins/confd
 z-shell/zsh-eza kind:defer
 MichaelAquilina/zsh-you-should-use kind:defer
-zdharma-continuum/fast-syntax-highlighting
-# zsh-users/zsh-syntax-highlighting
+# zdharma-continuum/fast-syntax-highlighting
+zsh-users/zsh-syntax-highlighting
 zsh-users/zsh-autosuggestions post:post-autosuggestions
 zsh-users/zsh-history-substring-search post:post-history-substring-search
 
-junegunn/fzf kind:clone
+# junegunn/fzf kind:clone
 aloxaf/fzf-tab kind:defer
 # vi: ft=properties

@@ -23,6 +23,10 @@ cdpath=(
   $cdpath
 )
 
+prepath=(
+  $prepath
+)
+
 # Set the list of directories that Zsh searches for programs.
 path=(
   # core
