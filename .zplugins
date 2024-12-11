@@ -82,7 +82,7 @@ z-shell/zsh-eza kind:defer
 # junegunn/fzf kind:clone
 # aloxaf/fzf-tab kind:defer
 aloxaf/fzf-tab
-MichaelAquilina/zsh-you-should-use kind:defer
+# MichaelAquilina/zsh-you-should-use kind:defer
 # zdharma-continuum/fast-syntax-highlighting
 zsh-users/zsh-syntax-highlighting
 zsh-users/zsh-autosuggestions post:post-autosuggestions
