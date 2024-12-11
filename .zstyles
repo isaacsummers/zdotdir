@@ -98,6 +98,7 @@ FZF_TAB_GROUP_COLORS=(
 zstyle ':fzf-tab:*' group-colors $FZF_TAB_GROUP_COLORS
 # zstyle ':fzf-tab:*' prefix '∘'
 zstyle ':completion:*:git-checkout:*' sort false
+# zstyle ':completion:*' format '%d'
 zstyle ':completion:*:descriptions' format '[%d]'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' menu no

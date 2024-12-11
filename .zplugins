@@ -16,7 +16,7 @@ $ZSH_CUSTOM/plugins/xdg
 # Completions
 #
 
-mattmc3/ez-compinit
+# mattmc3/ez-compinit
 zsh-users/zsh-completions kind:fpath path:src
 
 #
@@ -37,6 +37,7 @@ $ZSH_CUSTOM/plugins/git
 # $ZSH_CUSTOM/plugins/pyenv
 $ZSH_CUSTOM/plugins/mise
 # $ZSH_CUSTOM/plugins/custom_evals
+$ZSH_CUSTOM/completions kind:fpath
 
 #
 # Utils
@@ -52,6 +53,7 @@ ohmyzsh/ohmyzsh path:plugins/git
 ohmyzsh/ohmyzsh path:plugins/gitfast
 ohmyzsh/ohmyzsh path:plugins/dbt
 ohmyzsh/ohmyzsh path:plugins/magic-enter
+ohmyzsh/ohmyzsh path:plugins/mise
 mattmc3/zman
 # xPMo/zsh-ls-colors path:lib
 

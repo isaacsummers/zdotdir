@@ -74,7 +74,11 @@ prompt "$ZSH_THEME[@]"
 [[ "$PWD" != "/" ]] || cd
 
 # fix fzf-tab
-zstyle ':completion:*:descriptions' format "[%d]"
+# zstyle ':completion:*' format ' [%d] '
+# zstyle ':completion:*:descriptions' format ' [%d] '
+# zstyle ':completion:*:corrections' format ' [%d] (errors: %e)'
+# zstyle ':completion:*:messages' format ' [%d] '
+# zstyle ':completion:*:warnings' format ' [no matches found] '
 
 # Manually call post_zshrc to bypass the hook
 (( $+functions[run_post_zshrc] )) && run_post_zshrc
