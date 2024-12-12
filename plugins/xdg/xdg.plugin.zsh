@@ -53,3 +53,5 @@ export POETRY_CACHE_DIR=${POETRY_CACHE_DIR:-$XDG_CACHE_HOME/pypoetry}
 export MAGIC_ENTER_GIT_COMMAND="git status -sb ."
 
 export MISE_PYTHON_UV_VENV_AUTO=true
+
+export ZSH_CACHE_DIR=${ZSH_CACHE_DIR:-${XDG_DATA_HOME:-~/.cache}/zsh}
